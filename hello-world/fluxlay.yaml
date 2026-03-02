@@ -1,0 +1,5 @@
+name: Hello World
+slug: hello-world
+version: 0.1.0
+description: |
+  Example Fluxlay wallpaper that displays a simple "Hello, World!" message.
