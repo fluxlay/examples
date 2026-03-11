@@ -1,0 +1,12 @@
+name: Glass Cube
+slug: glass-cube
+version: 0.1.0
+description: |
+  A mesmerizing 3D glass cube that reacts to your mouse cursor. This wallpaper showcases Fluxlay's mouse tracking and Three.js integration with real-time rendering.
+
+  Features:
+  - Glass Cube — A transparent, refracting cube rendered with physically-based transmission materials, chromatic aberration, and continuous rotation
+  - Mouse Interaction — The cube tilts and follows your cursor position with smooth interpolation
+  - Minimal Aesthetic — Clean black background with subtle horizontal lines, studio-lit environment
+
+  Built with React Three Fiber, Drei, and a custom GLB model for high-quality 3D visuals directly on your desktop.

@@ -1,0 +1,35 @@
+name: Run Command
+slug: run-command
+version: 0.1.0
+description: |
+  Turn your desktop into a live system dashboard. This wallpaper demonstrates Fluxlay's shell integration by executing real commands and displaying their output directly on your desktop.
+  
+  Features:
+  - System Monitor — Displays hardware and OS information via macchina, rendered in an embedded terminal with auto-refresh
+  - Battery Status — Shows real-time battery level and charging state using pmset
+  - Network Info — Fetches and displays your public IP address via curl
+  
+  All data updates automatically at configurable intervals, keeping your desktop informative at a glance. Built with a clean, minimal design using a light monospace aesthetic with subtle dot-grid background.
+  
+  Requirements: macOS, macchina, curl, jq
+
+shell:
+  macchina:
+    run: macchina
+    reason: Modern and fast system information fetcher written in Rust.
+    required:
+      - macchina
+  fetch-ip:
+    run: |
+      curl https://httpbin.org/ip | jq -r '.origin'
+    reason: Required to retrieve the public IP address for network diagnostic purposes.
+    required:
+      - curl
+      - jq
+  pmset:
+    run: pmset -g batt | awk 'NR==2 {print $3, $4, $5}' | tr -d ';'
+    reason: Used to fetch current weather information.
+    required:
+      - pmset
+      - awk
+      - tr

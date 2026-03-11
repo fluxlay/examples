@@ -2,4 +2,6 @@ name: Hello World
 slug: hello-world
 version: 0.1.0
 description: |
-  Example Fluxlay wallpaper that displays a simple "Hello, World!" message.
+  The simplest Fluxlay wallpaper — a minimal starting point for building your own. Displays a centered "Hello World!!" message on a clean gray background.
+  
+  Perfect as a boilerplate template to quickly scaffold new wallpaper projects. Includes the essential Fluxlay project structure with React, TypeScript, and Vite pre-configured.

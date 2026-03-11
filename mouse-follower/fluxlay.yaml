@@ -1,0 +1,12 @@
+name: Mouse Follower
+slug: mouse-follower
+version: 0.1.0
+description: |
+  An interactive starry sky where particles drift toward your cursor. This wallpaper demonstrates Fluxlay's mouse tracking with spring-based physics animations.
+  
+  Features:
+  - Star Particles — 80 glowing particles scattered across a deep night sky, each with unique size, color, and opacity
+  - Mouse Attraction — Stars gently gravitate toward your cursor with soft, physics-driven spring animations
+  - Constellation Lines — Dynamic connections between nearby stars that fade in and out based on proximity
+  
+  Built with React Spring for fluid animations and Fluxlay's backend mouse API for seamless cursor tracking on your desktop.
