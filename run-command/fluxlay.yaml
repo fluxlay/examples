@@ -1,6 +1,6 @@
 name: Run Command
 slug: run-command
-version: 0.1.0
+version: 0.1.1
 description: |
   Turn your desktop into a live system dashboard. This wallpaper demonstrates Fluxlay's shell integration by executing real commands and displaying their output directly on your desktop.
   

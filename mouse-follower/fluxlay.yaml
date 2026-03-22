@@ -1,6 +1,6 @@
 name: Mouse Follower
 slug: mouse-follower
-version: 0.1.0
+version: 0.1.1
 description: |
   An interactive starry sky where particles drift toward your cursor. This wallpaper demonstrates Fluxlay's mouse tracking with spring-based physics animations.
   

@@ -1,6 +1,6 @@
 name: Glass Cube
 slug: glass-cube
-version: 0.1.0
+version: 0.1.1
 description: |
   A mesmerizing 3D glass cube that reacts to your mouse cursor. This wallpaper showcases Fluxlay's mouse tracking and Three.js integration with real-time rendering.
 
