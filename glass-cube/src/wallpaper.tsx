@@ -1,4 +1,4 @@
-import { useBackendMouse } from "@fluxlay/react";
+import { useMousePosition } from "@fluxlay/react";
 import { Environment, MeshTransmissionMaterial, PerspectiveCamera, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
@@ -8,7 +8,7 @@ function GlassModel() {
   const { nodes } = useGLTF("/glass-cube.glb");
   const groupRef = useRef<THREE.Group>(null);
   const meshRef = useRef<THREE.Mesh>(null);
-  const backendMouse = useBackendMouse();
+  const mousePosition = useMousePosition();
 
   const lastUpdateTime = useRef(0);
 
@@ -19,9 +19,9 @@ function GlassModel() {
 
     if (groupRef.current) {
       // バックエンドの座標があればそれを使用し、なければフロントエンドのマウス座標を使用する
-      const isBackendActive = backendMouse.x !== 0 || backendMouse.y !== 0;
-      const x = isBackendActive ? backendMouse.x : state.pointer.x;
-      const y = isBackendActive ? backendMouse.y : state.pointer.y;
+      const isBackendActive = mousePosition.x !== 0 || mousePosition.y !== 0;
+      const x = isBackendActive ? mousePosition.x : state.pointer.x;
+      const y = isBackendActive ? mousePosition.y : state.pointer.y;
 
       const targetRotationX = -y * 0.5;
       const targetRotationY = x * 0.5;

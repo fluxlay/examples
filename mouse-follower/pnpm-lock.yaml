@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fluxlay/react':
-        specifier: ^0.1.6
-        version: 0.1.6(react@19.2.4)
+        specifier: ^1.1.0
+        version: 1.1.0(react@19.2.4)
       '@react-spring/web':
         specifier: ^10.0.3
         version: 10.0.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -324,8 +324,8 @@ packages:
     resolution: {integrity: sha512-hz8hZrLDOixluyt9yXxQW0il+Kz6GUwCpltHc4e+JJ3EtYfuyw67SRUnQL73u6u1y7GIM15aFh4pp7zmwO3YOA==}
     hasBin: true
 
-  '@fluxlay/react@0.1.6':
-    resolution: {integrity: sha512-qnSjlPlGUtQoqvdBTEHI2RcuzPIpqq51LR8lNcTyu13RrVGjFxWYCpLGSvrMQHmyFzBvY4t59pl7Z03appi8Gg==}
+  '@fluxlay/react@1.1.0':
+    resolution: {integrity: sha512-vAK3YoPFk1G9dO69LNlpNANuZaqFEu+ws5IwZI6FCf2S2vfLn09DB6t8a99NmTcHhwpvKiZxl/RwUv/NNUyPDg==}
     peerDependencies:
       react: ^19.0.0
 
@@ -1515,7 +1515,7 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@fluxlay/react@0.1.6(react@19.2.4)':
+  '@fluxlay/react@1.1.0(react@19.2.4)':
     dependencies:
       '@xterm/addon-fit': 0.11.0
       '@xterm/xterm': 6.0.0

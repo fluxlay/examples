@@ -1,4 +1,4 @@
-import { useBackendMouse } from "@fluxlay/react";
+import { useMousePosition } from "@fluxlay/react";
 import { animated, useSprings } from "@react-spring/web";
 import React, { useEffect, useMemo } from "react";
 import { createRoot } from "react-dom/client";
@@ -8,7 +8,7 @@ const PARTICLE_COUNT = 80; // パーティクルを増量
 const STAR_COLORS = ["#FFFFFF", "#FFF9E3", "#E3F2FF", "#B3E5FC", "#FFFDE7"];
 
 const MouseFollower = () => {
-  const backendMouse = useBackendMouse();
+  const mousePosition = useMousePosition();
 
   // 星々の初期配置とプロパティ
   const stars = useMemo(() => {
@@ -31,8 +31,8 @@ const MouseFollower = () => {
   }));
 
   useEffect(() => {
-    const mx = ((backendMouse.x + 1) / 2) * window.innerWidth;
-    const my = (1 - (backendMouse.y + 1) / 2) * window.innerHeight;
+    const mx = ((mousePosition.x + 1) / 2) * window.innerWidth;
+    const my = (1 - (mousePosition.y + 1) / 2) * window.innerHeight;
 
     api.start(i => {
       const s = stars[i];
@@ -59,7 +59,7 @@ const MouseFollower = () => {
         },
       };
     });
-  }, [backendMouse.x, backendMouse.y, api, stars]);
+  }, [mousePosition.x, mousePosition.y, api, stars]);
 
   return (
     <div className="w-full h-full bg-[#050B18] overflow-hidden relative">
