@@ -1,0 +1,15 @@
+name: System Monitor
+slug: system-monitor
+version: 0.1.0
+description: |
+  A cyberpunk-style HUD that displays real-time system metrics. This wallpaper demonstrates Fluxlay's system monitoring integration by showing live hardware stats directly on your desktop.
+
+  Features:
+  - CPU Monitor — Overall usage gauge with per-core grid visualization, color-coded by load intensity
+  - Memory & Swap — Real-time usage bars with absolute and percentage readouts
+  - Battery Indicator — Segmented battery display with charging status detection
+  - Network I/O — Live upload and download speed tracking
+  - Disk I/O & Storage — Read/write throughput and per-mount usage bars
+  - Dark/Light Mode — Automatically adapts to your system appearance preference
+
+  Built with React, Tailwind CSS, and Fluxlay's useSystemMonitor hook for zero-config system data access.

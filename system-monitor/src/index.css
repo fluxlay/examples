@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ダークテーマ（現行デザイン） */
+  --color-bg: #f5f5f8;
+  --color-text: #1a1a2e;
+  --color-text-sub: rgba(26, 26, 46, 0.5);
+  --color-text-muted: rgba(26, 26, 46, 0.3);
+  --color-text-faint: rgba(26, 26, 46, 0.15);
+  --color-border: rgba(26, 26, 46, 0.1);
+  --color-bar-bg: rgba(26, 26, 46, 0.06);
+  --color-accent: #0077cc;
+  --color-accent-purple: #6644bb;
+  --color-accent-storage: #6644bb;
+  --color-core-text-active: rgba(26, 26, 46, 0.9);
+  --color-core-text-idle: rgba(26, 26, 46, 0.3);
+  --color-status-ok: #059669;
+  --color-status-warn: #d97706;
+  --color-status-danger: #dc2626;
+}
+
+.dark {
+  --color-bg: #060610;
+  --color-text: #ffffff;
+  --color-text-sub: rgba(255, 255, 255, 0.7);
+  --color-text-muted: rgba(255, 255, 255, 0.4);
+  --color-text-faint: rgba(255, 255, 255, 0.15);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-bar-bg: rgba(255, 255, 255, 0.05);
+  --color-accent: #00ccff;
+  --color-accent-purple: #aa88ff;
+  --color-accent-storage: #aa88ff;
+  --color-core-text-active: rgba(255, 255, 255, 0.9);
+  --color-core-text-idle: rgba(255, 255, 255, 0.3);
+  --color-status-ok: #00ffaa;
+  --color-status-warn: #ffaa00;
+  --color-status-danger: #ff3355;
+}
