@@ -1,0 +1,27 @@
+name: Audio Visualizer
+slug: audio-visualizer
+version: 0.1.0
+description: |
+  A circular audio visualizer wallpaper with reactive animations driven by your mouse cursor. Procedurally generated frequency data creates a mesmerizing, always-evolving display.
+  
+  Features:
+  - Circular Frequency Bars — 128 bars arranged in a circle, pulsating with procedurally generated audio-like waveforms
+  - Mouse Interaction — Cursor position influences animation speed, complexity, and color hue shift
+  - Layered Visuals — Outer bars, inner mirrored bars, waveform ring, and floating particles for depth
+  - Glow & Trail Effects — Neon glow on bars and fade trails for a smooth, atmospheric look
+  
+  Built with Canvas 2D rendering, system audio capture, and media metadata integration.
+
+properties:
+  showMediaInfo:
+    type: boolean
+    label: Show Media Info
+    default: true
+  transparentBg:
+    type: boolean
+    label: Transparent Background
+    default: true
+  bgColor:
+    type: color
+    label: Background Color
+    default: "#000000"
