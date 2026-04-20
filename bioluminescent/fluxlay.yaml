@@ -1,0 +1,21 @@
+name: Bioluminescent
+slug: bioluminescent
+version: 0.2.0
+description: |
+  Teal and mint bioluminescent cells drift through a deep-sea abyss.
+  Each particle pulses with an individual heartbeat, while flowing aurora
+  curtains sweep across the backdrop. Move the cursor to carry particles
+  along its path. The light filtering down from the surface shifts
+  automatically through dawn, midday, dusk and night, tinted by the
+  current weather fetched from wttr.in.
+
+shell:
+  weather:
+    run: curl -s -m 5 "https://wttr.in/?format=j1"
+    reason: Fetches current weather (cloud cover, precipitation) to colour the surface light.
+    required:
+      - curl
+
+network:
+  - origin: https://wttr.in
+    reason: Used to retrieve current weather conditions for ambient lighting.
