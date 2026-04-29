@@ -1,57 +1,59 @@
 # Fluxlay Examples
 
-[Fluxlay](https://fluxlay.com) でライブ壁紙を作るための公式サンプル集です。各ディレクトリは単体で動作する独立したプロジェクトで、`@fluxlay/cli` の `dev` / `build` / `publish` コマンドにそのまま利用できます。
+[日本語](./README.ja.md) | **English**
 
-## サンプル一覧
+Official examples for building live wallpapers with [Fluxlay](https://fluxlay.com). Each directory is a standalone project that works directly with the `@fluxlay/cli` `dev` / `build` / `publish` commands.
 
-| サンプル | 概要 | 使われている API |
+## Examples
+
+| Example | Description | APIs used |
 | --- | --- | --- |
-| [hello-world](./hello-world) | 最小構成のテンプレート。新規プロジェクトの雛形に。 | — |
-| [mouse-follower](./mouse-follower) | カーソルに追従する星粒子。React Spring 物理アニメーション。 | `useMousePosition` |
-| [gradient-waves](./gradient-waves) | 時間帯で色が変わる多層グラデーション波。 | `useMousePosition` |
-| [particle-flow-field](./particle-flow-field) | Perlin ノイズによるフロー場と粒子トレイル。 | `useMousePosition` |
-| [glass-cube](./glass-cube) | React Three Fiber で描画する屈折ガラスキューブ。 | `useMousePosition` |
-| [audio-visualizer](./audio-visualizer) | 円形周波数バー + 再生中メディア表示。 | Audio capture, Media metadata, Custom properties |
-| [matrix-rain](./matrix-rain) | CPU 負荷に反応する Matrix 風デジタルレイン。 | `useSystemMonitor` |
-| [system-monitor](./system-monitor) | CPU / メモリ / ネット I/O などをサイバーパンク調 HUD で表示。 | `useSystemMonitor` |
-| [run-command](./run-command) | macchina / pmset / curl 等の出力をデスクトップに表示。 | `shell`, `network` |
+| [hello-world](./hello-world) | Minimal template — a starting point for new projects. | — |
+| [mouse-follower](./mouse-follower) | Star particles drifting toward your cursor with React Spring physics. | `useMousePosition` |
+| [gradient-waves](./gradient-waves) | Layered gradient waves with time-of-day color shifts. | `useMousePosition` |
+| [particle-flow-field](./particle-flow-field) | Perlin-noise flow field with painterly particle trails. | `useMousePosition` |
+| [glass-cube](./glass-cube) | Refractive glass cube rendered with React Three Fiber. | `useMousePosition` |
+| [audio-visualizer](./audio-visualizer) | Circular frequency bars with now-playing media metadata. | Audio capture, Media metadata, Custom properties |
+| [matrix-rain](./matrix-rain) | Matrix-style digital rain reactive to CPU load. | `useSystemMonitor` |
+| [system-monitor](./system-monitor) | Cyberpunk HUD displaying CPU / memory / network metrics. | `useSystemMonitor` |
+| [run-command](./run-command) | Desktop dashboard powered by `macchina`, `pmset`, `curl`. | `shell`, `network` |
 
-## 使い方
+## Usage
 
-各サンプルディレクトリで以下を実行します。
+In any example directory:
 
 ```sh
 cd <example>
 pnpm install
-pnpm dev       # Fluxlay アプリと連携した開発サーバー（HMR）
-pnpm build     # wallpaper.fluxlay を生成
-pnpm publish   # Fluxlay ストアへ公開（要ログイン）
+pnpm dev       # Dev server with HMR, paired with the Fluxlay app
+pnpm build     # Produces wallpaper.fluxlay
+pnpm publish   # Publish to the Fluxlay store (requires login)
 ```
 
 > [!NOTE]
-> 開発サーバーの利用には [Fluxlay デスクトップアプリ](https://fluxlay.com) のインストールと、`fluxlay login` での認証が必要です。
+> The dev server requires the [Fluxlay desktop app](https://fluxlay.com) and authentication via `fluxlay login`.
 
-## 必要環境
+## Requirements
 
 - Node.js 20+ / pnpm 10+
-- macOS または Windows（Fluxlay 本体の対応 OS）
-- `run-command` サンプルのみ追加で `macchina`, `curl`, `jq` が必要
+- macOS or Windows (per Fluxlay's supported platforms)
+- `run-command` additionally requires `macchina`, `curl`, and `jq`
 
-## プロジェクト構成
+## Project structure
 
-すべてのサンプルは共通して以下の構成を持ちます。
+Every example follows the same layout:
 
 ```
 <example>/
-├── fluxlay.yaml      # 壁紙マニフェスト（name / slug / kind: web / properties など）
-├── package.json      # @fluxlay/cli, @fluxlay/vite, @fluxlay/react を依存に持つ
-├── vite.config.ts    # @fluxlay/vite プラグインを設定
+├── fluxlay.yaml      # Wallpaper manifest (name / slug / kind: web / properties, etc.)
+├── package.json      # Depends on @fluxlay/cli, @fluxlay/vite, @fluxlay/react
+├── vite.config.ts    # Configures the @fluxlay/vite plugin
 ├── index.html
-└── src/main.tsx      # 壁紙のエントリーポイント
+└── src/main.tsx      # Wallpaper entry point
 ```
 
-`fluxlay.yaml` の仕様は [`@fluxlay/cli` の README](https://github.com/fluxlay/cli) を参照してください。
+See the [`@fluxlay/cli` README](https://github.com/fluxlay/cli) for the full `fluxlay.yaml` specification.
 
-## ライセンス
+## License
 
-各サンプルは [MIT License](./LICENSE) のもとで提供されます。自由にフォーク・改変して独自の壁紙作成にお役立てください。
+Each example is provided under the [MIT License](./LICENSE). Feel free to fork and modify them to build your own wallpapers.
