@@ -4,19 +4,21 @@
 
 Official examples for building live wallpapers with [Fluxlay](https://fluxlay.com). Each directory is a standalone project that works directly with the `@fluxlay/cli` `dev` / `build` / `publish` commands.
 
+📖 **Documentation:** [Getting Started](https://fluxlay.com/docs/developer/tutorials/getting-started) · [CLI Reference](https://fluxlay.com/docs/developer/reference/cli/commands) · [Manifest Reference](https://fluxlay.com/docs/developer/reference/cli/manifest) · [SDK Reference](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position)
+
 ## Examples
 
 | Example | Description | APIs used |
 | --- | --- | --- |
 | [hello-world](./hello-world) | Minimal template — a starting point for new projects. | — |
-| [mouse-follower](./mouse-follower) | Star particles drifting toward your cursor with React Spring physics. | `useMousePosition` |
-| [gradient-waves](./gradient-waves) | Layered gradient waves with time-of-day color shifts. | `useMousePosition` |
-| [particle-flow-field](./particle-flow-field) | Perlin-noise flow field with painterly particle trails. | `useMousePosition` |
-| [glass-cube](./glass-cube) | Refractive glass cube rendered with React Three Fiber. | `useMousePosition` |
-| [audio-visualizer](./audio-visualizer) | Circular frequency bars with now-playing media metadata. | Audio capture, Media metadata, Custom properties |
-| [matrix-rain](./matrix-rain) | Matrix-style digital rain reactive to CPU load. | `useSystemMonitor` |
-| [system-monitor](./system-monitor) | Cyberpunk HUD displaying CPU / memory / network metrics. | `useSystemMonitor` |
-| [run-command](./run-command) | Desktop dashboard powered by `macchina`, `pmset`, `curl`. | `shell`, `network` |
+| [mouse-follower](./mouse-follower) | Star particles drifting toward your cursor with React Spring physics. | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
+| [gradient-waves](./gradient-waves) | Layered gradient waves with time-of-day color shifts. | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
+| [particle-flow-field](./particle-flow-field) | Perlin-noise flow field with painterly particle trails. | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
+| [glass-cube](./glass-cube) | Refractive glass cube rendered with React Three Fiber. | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
+| [audio-visualizer](./audio-visualizer) | Circular frequency bars with now-playing media metadata. | [`useAudio`](https://fluxlay.com/docs/developer/reference/sdk/use-audio), [`useMediaMetadata`](https://fluxlay.com/docs/developer/reference/sdk/use-media-metadata), [`useProperties`](https://fluxlay.com/docs/developer/reference/sdk/use-properties) |
+| [matrix-rain](./matrix-rain) | Matrix-style digital rain reactive to CPU load. | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
+| [system-monitor](./system-monitor) | Cyberpunk HUD displaying CPU / memory / network metrics. | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
+| [run-command](./run-command) | Desktop dashboard powered by `macchina`, `pmset`, `curl`. | [`useShell`](https://fluxlay.com/docs/developer/reference/sdk/use-shell), [`shell` / `network` manifest](https://fluxlay.com/docs/developer/reference/cli/manifest) |
 
 ## Usage
 
@@ -31,7 +33,7 @@ pnpm publish   # Publish to the Fluxlay store (requires login)
 ```
 
 > [!NOTE]
-> The dev server requires the [Fluxlay desktop app](https://fluxlay.com) and authentication via `fluxlay login`.
+> The dev server requires the [Fluxlay desktop app](https://fluxlay.com) and authentication via `fluxlay login`. See the [getting started guide](https://fluxlay.com/docs/developer/tutorials/getting-started) for the full walkthrough.
 
 ## Requirements
 
@@ -52,7 +54,7 @@ Every example follows the same layout:
 └── src/main.tsx      # Wallpaper entry point
 ```
 
-See the [`@fluxlay/cli` README](https://github.com/fluxlay/cli) for the full `fluxlay.yaml` specification.
+See the [manifest reference](https://fluxlay.com/docs/developer/reference/cli/manifest) for the full `fluxlay.yaml` specification, and the [Vite plugin reference](https://fluxlay.com/docs/developer/reference/vite-plugin) for `@fluxlay/vite` options.
 
 ## License
 

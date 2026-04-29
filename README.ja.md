@@ -4,19 +4,21 @@
 
 [Fluxlay](https://fluxlay.com) でライブ壁紙を作るための公式サンプル集です。各ディレクトリは単体で動作する独立したプロジェクトで、`@fluxlay/cli` の `dev` / `build` / `publish` コマンドにそのまま利用できます。
 
+📖 **ドキュメント:** [はじめに](https://fluxlay.com/docs/developer/tutorials/getting-started) · [CLI リファレンス](https://fluxlay.com/docs/developer/reference/cli/commands) · [マニフェストリファレンス](https://fluxlay.com/docs/developer/reference/cli/manifest) · [SDK リファレンス](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position)
+
 ## サンプル一覧
 
 | サンプル | 概要 | 使われている API |
 | --- | --- | --- |
 | [hello-world](./hello-world) | 最小構成のテンプレート。新規プロジェクトの雛形に。 | — |
-| [mouse-follower](./mouse-follower) | カーソルに追従する星粒子。React Spring 物理アニメーション。 | `useMousePosition` |
-| [gradient-waves](./gradient-waves) | 時間帯で色が変わる多層グラデーション波。 | `useMousePosition` |
-| [particle-flow-field](./particle-flow-field) | Perlin ノイズによるフロー場と粒子トレイル。 | `useMousePosition` |
-| [glass-cube](./glass-cube) | React Three Fiber で描画する屈折ガラスキューブ。 | `useMousePosition` |
-| [audio-visualizer](./audio-visualizer) | 円形周波数バー + 再生中メディア表示。 | Audio capture, Media metadata, Custom properties |
-| [matrix-rain](./matrix-rain) | CPU 負荷に反応する Matrix 風デジタルレイン。 | `useSystemMonitor` |
-| [system-monitor](./system-monitor) | CPU / メモリ / ネット I/O などをサイバーパンク調 HUD で表示。 | `useSystemMonitor` |
-| [run-command](./run-command) | macchina / pmset / curl 等の出力をデスクトップに表示。 | `shell`, `network` |
+| [mouse-follower](./mouse-follower) | カーソルに追従する星粒子。React Spring 物理アニメーション。 | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
+| [gradient-waves](./gradient-waves) | 時間帯で色が変わる多層グラデーション波。 | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
+| [particle-flow-field](./particle-flow-field) | Perlin ノイズによるフロー場と粒子トレイル。 | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
+| [glass-cube](./glass-cube) | React Three Fiber で描画する屈折ガラスキューブ。 | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
+| [audio-visualizer](./audio-visualizer) | 円形周波数バー + 再生中メディア表示。 | [`useAudio`](https://fluxlay.com/docs/developer/reference/sdk/use-audio), [`useMediaMetadata`](https://fluxlay.com/docs/developer/reference/sdk/use-media-metadata), [`useProperties`](https://fluxlay.com/docs/developer/reference/sdk/use-properties) |
+| [matrix-rain](./matrix-rain) | CPU 負荷に反応する Matrix 風デジタルレイン。 | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
+| [system-monitor](./system-monitor) | CPU / メモリ / ネット I/O などをサイバーパンク調 HUD で表示。 | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
+| [run-command](./run-command) | macchina / pmset / curl 等の出力をデスクトップに表示。 | [`useShell`](https://fluxlay.com/docs/developer/reference/sdk/use-shell), [`shell` / `network` マニフェスト](https://fluxlay.com/docs/developer/reference/cli/manifest) |
 
 ## 使い方
 
@@ -31,7 +33,7 @@ pnpm publish   # Fluxlay ストアへ公開（要ログイン）
 ```
 
 > [!NOTE]
-> 開発サーバーの利用には [Fluxlay デスクトップアプリ](https://fluxlay.com) のインストールと、`fluxlay login` での認証が必要です。
+> 開発サーバーの利用には [Fluxlay デスクトップアプリ](https://fluxlay.com) のインストールと、`fluxlay login` での認証が必要です。詳しい手順は [はじめにガイド](https://fluxlay.com/docs/developer/tutorials/getting-started) を参照してください。
 
 ## 必要環境
 
@@ -52,7 +54,7 @@ pnpm publish   # Fluxlay ストアへ公開（要ログイン）
 └── src/main.tsx      # 壁紙のエントリーポイント
 ```
 
-`fluxlay.yaml` の仕様は [`@fluxlay/cli` の README](https://github.com/fluxlay/cli) を参照してください。
+`fluxlay.yaml` の仕様は [マニフェストリファレンス](https://fluxlay.com/docs/developer/reference/cli/manifest) を、`@fluxlay/vite` のオプションは [Vite プラグインリファレンス](https://fluxlay.com/docs/developer/reference/vite-plugin) を参照してください。
 
 ## ライセンス
 
