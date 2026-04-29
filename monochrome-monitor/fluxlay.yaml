@@ -1,0 +1,32 @@
+name: Monochrome Monitor
+slug: monochrome-monitor
+version: 0.1.0
+kind: web
+description: |
+  A minimal black-and-white wallpaper that combines a real-time system monitor with a bottom-edge audio visualizer. System metrics are spread across the screen as a quiet HUD while a slim spectrum strip pulses along the bottom in sync with whatever you're playing.
+
+  Features:
+  - Monochrome Design — Strict grayscale palette, no accent hues, sharp typography
+  - System HUD — CPU, per-core grid, memory, swap, battery, network, disk I/O, and storage spread around the screen
+  - Bottom Audio Visualizer — 128-band spectrum strip rendered along the bottom edge with a thin waveform overlay
+  - Theme Switch — Toggle between dark (white on black) and light (black on white) via a property
+  - Auto Theme Mode — Optionally follows the system color-scheme preference
+
+  Built with React, Tailwind CSS, Canvas 2D, and Fluxlay's useSystemMonitor / useAudio / useMediaMetadata hooks.
+
+properties:
+  themeMode:
+    type: string
+    label: Theme
+    default: auto
+    options:
+      - value: auto
+        label: Auto (system)
+      - value: dark
+        label: Dark
+      - value: light
+        label: Light
+  showMediaInfo:
+    type: boolean
+    label: Show Media Info
+    default: true

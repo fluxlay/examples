@@ -18,6 +18,7 @@
 | [audio-visualizer](./audio-visualizer) | 円形周波数バー + 再生中メディア表示。 | [`useAudio`](https://fluxlay.com/docs/developer/reference/sdk/use-audio), [`useMediaMetadata`](https://fluxlay.com/docs/developer/reference/sdk/use-media-metadata), [`useProperties`](https://fluxlay.com/docs/developer/reference/sdk/use-properties) |
 | [matrix-rain](./matrix-rain) | CPU 負荷に反応する Matrix 風デジタルレイン。 | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
 | [system-monitor](./system-monitor) | CPU / メモリ / ネット I/O などをサイバーパンク調 HUD で表示。 | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
+| [monochrome-monitor](./monochrome-monitor) | 白黒ミニマルなシステム HUD + 下辺オーディオスペクトラム + ダーク/ライト切り替え。 | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor), [`useAudio`](https://fluxlay.com/docs/developer/reference/sdk/use-audio), [`useMediaMetadata`](https://fluxlay.com/docs/developer/reference/sdk/use-media-metadata), [`useProperties`](https://fluxlay.com/docs/developer/reference/sdk/use-properties) |
 | [run-command](./run-command) | macchina / pmset / curl 等の出力をデスクトップに表示。 | [`useShell`](https://fluxlay.com/docs/developer/reference/sdk/use-shell), [`shell` / `network` マニフェスト](https://fluxlay.com/docs/developer/reference/cli/manifest) |
 
 ## 使い方

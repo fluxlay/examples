@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Light theme — ink on paper */
+  --color-bg: #f4f4f4;
+  --color-fg: #0a0a0a;
+  --color-fg-strong: #000000;
+  --color-fg-sub: rgba(10, 10, 10, 0.65);
+  --color-fg-muted: rgba(10, 10, 10, 0.4);
+  --color-fg-faint: rgba(10, 10, 10, 0.2);
+  --color-fg-ghost: rgba(10, 10, 10, 0.08);
+  --color-rule: rgba(10, 10, 10, 0.15);
+  --color-track: rgba(10, 10, 10, 0.08);
+}
+
+.dark {
+  /* Dark theme — bone white on black */
+  --color-bg: #050505;
+  --color-fg: #f5f5f5;
+  --color-fg-strong: #ffffff;
+  --color-fg-sub: rgba(245, 245, 245, 0.7);
+  --color-fg-muted: rgba(245, 245, 245, 0.45);
+  --color-fg-faint: rgba(245, 245, 245, 0.22);
+  --color-fg-ghost: rgba(245, 245, 245, 0.08);
+  --color-rule: rgba(245, 245, 245, 0.18);
+  --color-track: rgba(245, 245, 245, 0.08);
+}

@@ -18,6 +18,7 @@ Official examples for building live wallpapers with [Fluxlay](https://fluxlay.co
 | [audio-visualizer](./audio-visualizer) | Circular frequency bars with now-playing media metadata. | [`useAudio`](https://fluxlay.com/docs/developer/reference/sdk/use-audio), [`useMediaMetadata`](https://fluxlay.com/docs/developer/reference/sdk/use-media-metadata), [`useProperties`](https://fluxlay.com/docs/developer/reference/sdk/use-properties) |
 | [matrix-rain](./matrix-rain) | Matrix-style digital rain reactive to CPU load. | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
 | [system-monitor](./system-monitor) | Cyberpunk HUD displaying CPU / memory / network metrics. | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
+| [monochrome-monitor](./monochrome-monitor) | Minimal black-and-white system HUD with a bottom-edge audio spectrum strip and dark/light theme switch. | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor), [`useAudio`](https://fluxlay.com/docs/developer/reference/sdk/use-audio), [`useMediaMetadata`](https://fluxlay.com/docs/developer/reference/sdk/use-media-metadata), [`useProperties`](https://fluxlay.com/docs/developer/reference/sdk/use-properties) |
 | [run-command](./run-command) | Desktop dashboard powered by `macchina`, `pmset`, `curl`. | [`useShell`](https://fluxlay.com/docs/developer/reference/sdk/use-shell), [`shell` / `network` manifest](https://fluxlay.com/docs/developer/reference/cli/manifest) |
 
 ## Usage
