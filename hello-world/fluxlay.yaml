@@ -1,6 +1,7 @@
 name: Hello World
 slug: hello-world
 version: 0.1.1
+kind: web
 description: |
   The simplest Fluxlay wallpaper — a minimal starting point for building your own. Displays a centered "Hello World!!" message on a clean gray background.
   

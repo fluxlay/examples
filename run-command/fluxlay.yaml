@@ -1,6 +1,7 @@
 name: Run Command
 slug: run-command
 version: 0.1.1
+kind: web
 description: |
   Turn your desktop into a live system dashboard. This wallpaper demonstrates Fluxlay's shell integration by executing real commands and displaying their output directly on your desktop.
   
@@ -33,3 +34,7 @@ shell:
       - pmset
       - awk
       - tr
+
+network:
+  - origin: https://httpbin.org
+    reason: Used to fetch the public IP address for network diagnostic purposes.

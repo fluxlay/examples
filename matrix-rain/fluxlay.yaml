@@ -1,0 +1,14 @@
+name: Matrix Rain
+slug: matrix-rain
+version: 0.1.0
+kind: web
+description: |
+  Classic digital rain inspired by The Matrix, powered by your system's real-time CPU data. This wallpaper demonstrates Fluxlay's system monitoring integration with dynamic visual feedback.
+
+  Features:
+  - Character Rain — Columns of falling characters rendered in monospace with randomized alphanumeric glyphs
+  - CPU-Reactive — Rain speed, density, and glow intensity scale with real-time CPU usage
+  - Per-Core Visualization — Each column's brightness reflects the load of the corresponding CPU core
+  - Depth Effect — Varying column speeds and opacity create a layered parallax feel
+
+  Built with Canvas 2D rendering and Fluxlay's useSystemMonitor hook for live CPU metrics.

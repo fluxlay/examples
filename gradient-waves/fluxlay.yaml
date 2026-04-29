@@ -1,0 +1,14 @@
+name: Gradient Waves
+slug: gradient-waves
+version: 0.1.0
+kind: web
+description: |
+  Smooth, layered gradient waves that flow across your desktop. This wallpaper demonstrates Fluxlay's mouse tracking with time-aware color animations.
+
+  Features:
+  - Layered Waves — Multiple sine waves stacked with translucent gradient fills, creating an organic ocean-like motion
+  - Mouse Interaction — Cursor position warps wave amplitude and frequency for a responsive, fluid feel
+  - Time-Aware Colors — Color palette gradually shifts throughout the day, from warm sunrise tones to cool midnight hues
+  - Smooth Animation — Continuous, buttery-smooth wave motion with subtle phase offsets between layers
+
+  Built with Canvas 2D rendering and Fluxlay's useMousePosition hook for cursor-driven wave distortion.

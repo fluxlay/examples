@@ -1,6 +1,7 @@
 name: System Monitor
 slug: system-monitor
 version: 0.1.0
+kind: web
 description: |
   A cyberpunk-style HUD that displays real-time system metrics. This wallpaper demonstrates Fluxlay's system monitoring integration by showing live hardware stats directly on your desktop.
 

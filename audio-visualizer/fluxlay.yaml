@@ -1,6 +1,7 @@
 name: Audio Visualizer
 slug: audio-visualizer
 version: 0.1.0
+kind: web
 description: |
   A circular audio visualizer wallpaper with reactive animations driven by your mouse cursor. Procedurally generated frequency data creates a mesmerizing, always-evolving display.
   

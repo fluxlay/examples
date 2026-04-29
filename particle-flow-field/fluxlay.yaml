@@ -1,0 +1,14 @@
+name: Particle Flow Field
+slug: particle-flow-field
+version: 0.1.0
+kind: web
+description: |
+  A mesmerizing flow field where thousands of particles drift along invisible currents. This wallpaper demonstrates Fluxlay's mouse tracking with Perlin noise-driven fluid animations.
+
+  Features:
+  - Flow Field — Perlin noise generates a continuously evolving vector field that guides particle movement
+  - Mouse Interaction — Cursor position creates a distortion vortex that bends the flow around it
+  - Fading Trails — Particles leave soft trails that gradually fade, creating a painterly effect
+  - Dynamic Colors — Particle hue shifts based on flow direction and velocity
+
+  Built with Canvas 2D rendering and Fluxlay's useMousePosition hook for seamless cursor tracking.
