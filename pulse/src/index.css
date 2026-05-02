@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #070a0f;
+  --color-text: #c0e0d8;
+  --color-text-dim: #608070;
+  --color-accent: #00ff88;
+  --color-pleth: #ffcc44;
+  --color-resp: #44ccff;
+  --color-bat: #ff99cc;
+  --color-alert: #ff3344;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  color: var(--color-text);
+}
+
+@keyframes alert-flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.alert-flash {
+  animation: alert-flash 0.7s ease-in-out infinite;
+}
+
+@keyframes lane-cursor {
+  0%,
+  100% {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}

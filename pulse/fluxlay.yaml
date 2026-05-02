@@ -1,0 +1,28 @@
+name: Pulse
+slug: pulse
+version: 0.1.0
+description: |
+  A vital-signs monitor for your Mac. CPU drives a synthesised ECG trace,
+  memory pulses on the pleth lane, network breathes on the resp lane, and
+  battery is rendered as a 12-segment patient indicator.
+
+properties:
+  accentColor:
+    type: color
+    label: ECG (CPU) Color
+    default: "#00FF88"
+  criticalThreshold:
+    type: number
+    label: Critical Load Threshold (%)
+    default: 80
+    min: 50
+    max: 95
+    step: 5
+  showSecondaryVitals:
+    type: boolean
+    label: Show Pleth / Resp / Battery Lanes
+    default: true
+  showGrid:
+    type: boolean
+    label: Show Monitor Grid
+    default: true
