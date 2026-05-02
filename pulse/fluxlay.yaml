@@ -1,6 +1,7 @@
 name: Pulse
 slug: pulse
-version: 0.1.0
+version: 0.1.1
+kind: web
 description: |
   A vital-signs monitor for your Mac. CPU drives a synthesised ECG trace,
   memory pulses on the pleth lane, network breathes on the resp lane, and
