@@ -1,6 +1,6 @@
 name: Pulse
 slug: pulse
-version: 0.1.1
+version: 0.1.2
 kind: web
 description: |
   A vital-signs monitor for your Mac. CPU drives a synthesised ECG trace,
