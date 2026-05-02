@@ -8,7 +8,8 @@ export interface PulseProperties {
 }
 
 // Layout
-export const HEADER_HEIGHT = 60;
+export const MENUBAR_OFFSET = 28; // avoid macOS menu bar at the top
+export const HEADER_HEIGHT = 60 + MENUBAR_OFFSET;
 export const FOOTER_HEIGHT = 50;
 export const LANE_LABEL_WIDTH = 220;
 

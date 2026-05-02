@@ -100,8 +100,11 @@ function PhonoLaneImpl({
         }
 
         // Asymmetric smoothing: snap up, fall slow.
+        // Spectrum from useAudio tends to be small (~0.0..0.3), so amplify
+        // generously here so a single segment lights up at the noise floor.
         for (let i = 0; i < BAND_COUNT; i++) {
-          const target = Math.min(1, (bands[i] ?? 0) * 1.6);
+          const raw = bands[i] ?? 0;
+          const target = Math.min(1, raw * 4);
           const current = smoothBands[i] ?? 0;
           const a = target > current ? 0.5 : 0.18;
           smoothBands[i] = current + (target - current) * a;
@@ -129,7 +132,10 @@ function PhonoLaneImpl({
         for (let i = 0; i < BAND_COUNT; i++) {
           const x = SIDE_MARGIN + i * (barWidth + BAR_GAP);
           const v = smoothBands[i] ?? 0;
-          const lit = Math.min(LED_ROWS, Math.floor(v * LED_ROWS));
+          // Light at least one segment as soon as there's any audio energy,
+          // otherwise the lane looks frozen during quiet passages.
+          const rawLit = Math.floor(v * LED_ROWS);
+          const lit = Math.min(LED_ROWS, v > 0.02 ? Math.max(1, rawLit) : 0);
 
           // OFF segments (dim background grid).
           ctx.fillStyle = offColor;

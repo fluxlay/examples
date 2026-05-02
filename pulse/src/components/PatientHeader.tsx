@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { HEADER_HEIGHT } from "../constants";
+import { HEADER_HEIGHT, MENUBAR_OFFSET } from "../constants";
 import { formatUptimeLong } from "../utils/format";
 
 interface PatientHeaderProps {
@@ -17,6 +17,7 @@ function PatientHeaderImpl(props: PatientHeaderProps) {
       className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 text-[11px] tracking-[0.2em] uppercase"
       style={{
         height: HEADER_HEIGHT,
+        paddingTop: MENUBAR_OFFSET,
         color: "var(--color-text-dim)",
         borderBottom: "1px solid rgba(0,255,200,0.12)",
       }}

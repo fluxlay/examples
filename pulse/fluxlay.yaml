@@ -1,7 +1,7 @@
 schemaVersion: 1
 name: Pulse
 slug: pulse
-version: 0.1.2
+version: 0.1.3
 kind: web
 description: |
   A vital-signs monitor for your Mac. CPU drives a synthesised ECG trace,
