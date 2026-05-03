@@ -12,12 +12,13 @@ export function useNormalizedMouse() {
 
   useFrame((state) => {
     const isBackend = backendMouse.x !== 0 || backendMouse.y !== 0;
+    // Fluxlay backend already returns window-normalised coords in [-1, 1]
+    // (see MouseTracker::normalize_mouse_position in fluxlay-core).
+    // Convert to [0, 1] for our shaders.
     if (isBackend) {
-      const w = window.innerWidth || 1;
-      const h = window.innerHeight || 1;
       target.current.set(
-        THREE.MathUtils.clamp(backendMouse.x / w, 0, 1),
-        THREE.MathUtils.clamp(backendMouse.y / h, 0, 1),
+        THREE.MathUtils.clamp((backendMouse.x + 1) * 0.5, 0, 1),
+        THREE.MathUtils.clamp((backendMouse.y + 1) * 0.5, 0, 1),
       );
     } else {
       target.current.set(
