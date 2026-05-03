@@ -1,0 +1,62 @@
+schemaVersion: 1
+name: Dev Dashboard
+slug: dev-dashboard
+version: 0.1.0
+kind: web
+description: |
+  GitHub の PR、Google カレンダーの予定、Pomodoro タイマーを 2x2 のダッシュボードにまとめた開発者向け壁紙。Fluxlay SDK のホスト連携 API (`proxiedFetch` / `openUrl` / `notify`) と Mimo によるクリック注入を一通りカバーする。
+  
+  Features:
+  - My Open PRs — 自分が作成した Open な Pull Request。クリックで既定ブラウザに遷移
+  - Review Requested — 自分にレビュー依頼が来ている Open な PR
+  - Today's Calendar — Google カレンダーの今日〜明日の予定。進行中はハイライト
+  - Pomodoro — 作業 / 休憩を交互にカウントダウンし、phase 切替時に OS 通知
+  
+  GitHub PAT (`repo` スコープ) と Google カレンダーの「予定の非公開 URL (ICS 形式)」をプロパティに設定する。空のパネルはヒントを表示するので、必要なものだけ埋めれば動く。
+network:
+  - origin: https://api.github.com
+    reason: 自分の Open PR とレビュー待ち PR を Search API で取得する。
+  - origin: https://avatars.githubusercontent.com
+    reason: PR 作成者のアバターを表示する。
+  - origin: https://calendar.google.com
+    reason: Google カレンダーの公開 ICS フィードを proxiedFetch 経由で取得する (CORS 回避)。
+properties:
+  githubToken:
+    type: text
+    label: GitHub Personal Access Token
+    default: ""
+    placeholder: ghp_...
+    maxLength: 255
+  githubUsername:
+    type: text
+    label: GitHub Username
+    default: ""
+    placeholder: ken109
+    maxLength: 64
+  googleCalendarIcsUrl:
+    type: text
+    label: Google Calendar ICS URL
+    default: ""
+    placeholder: https://calendar.google.com/calendar/ical/.../basic.ics
+    maxLength: 512
+  pomodoroWorkMinutes:
+    type: number
+    label: Pomodoro 作業 (分)
+    default: 25
+    min: 1
+    max: 90
+    step: 1
+  pomodoroBreakMinutes:
+    type: number
+    label: Pomodoro 休憩 (分)
+    default: 5
+    min: 1
+    max: 60
+    step: 1
+  refreshSeconds:
+    type: number
+    label: 更新間隔 (秒)
+    default: 120
+    min: 30
+    max: 3600
+    step: 10

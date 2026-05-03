@@ -20,6 +20,7 @@
 | [system-monitor](./system-monitor) | CPU / メモリ / ネット I/O などをサイバーパンク調 HUD で表示。 | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor) |
 | [monochrome-monitor](./monochrome-monitor) | 白黒ミニマルなシステム HUD + 下辺オーディオスペクトラム + ダーク/ライト切り替え。 | [`useSystemMonitor`](https://fluxlay.com/docs/developer/reference/sdk/use-system-monitor), [`useAudio`](https://fluxlay.com/docs/developer/reference/sdk/use-audio), [`useMediaMetadata`](https://fluxlay.com/docs/developer/reference/sdk/use-media-metadata), [`useProperties`](https://fluxlay.com/docs/developer/reference/sdk/use-properties) |
 | [run-command](./run-command) | macchina / pmset / curl 等の出力をデスクトップに表示。 | [`useShell`](https://fluxlay.com/docs/developer/reference/sdk/use-shell), [`shell` / `network` マニフェスト](https://fluxlay.com/docs/developer/reference/cli/manifest) |
+| [dev-dashboard](./dev-dashboard) | GitHub PR・Google カレンダー・Pomodoro タイマーをまとめた開発者向けダッシュボード。`proxiedFetch` / `openUrl` / `notify` と Mimo によるクリック注入の例。 | [`proxiedFetch`](https://fluxlay.com/docs/developer/reference/sdk/proxied-fetch), [`openUrl`](https://fluxlay.com/docs/developer/reference/sdk/open-url), [`notify`](https://fluxlay.com/docs/developer/reference/sdk/notify), [`MimoProvider`](https://fluxlay.com/docs/developer/reference/sdk/mimo-provider), [`useProperties`](https://fluxlay.com/docs/developer/reference/sdk/use-properties) |
 
 ## 使い方
 
