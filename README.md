@@ -2,7 +2,9 @@
 
 [日本語](./README.ja.md) | **English**
 
-Official examples for building live wallpapers with [Fluxlay](https://fluxlay.com). Each directory is a standalone project that works directly with the `@fluxlay/cli` `dev` / `build` / `publish` commands.
+Official examples and starter templates for building live wallpapers with [Fluxlay](https://fluxlay.com). Each directory is a standalone project that works directly with the `@fluxlay/cli` `dev` / `build` / `publish` commands — **copy one and edit freely** as a starting point for your own wallpaper.
+
+These examples are also the canonical home for patterns that are intentionally **not** in the `@fluxlay/react` SDK (such as WebGL helpers, drawing utilities, and other browser-API wrappers). The SDK is scoped to runtime-bridging APIs; everything else lives here as code you own.
 
 📖 **Documentation:** [Getting Started](https://fluxlay.com/docs/developer/tutorials/getting-started) · [CLI Reference](https://fluxlay.com/docs/developer/reference/cli/commands) · [Manifest Reference](https://fluxlay.com/docs/developer/reference/cli/manifest) · [SDK Reference](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position)
 
@@ -11,6 +13,7 @@ Official examples for building live wallpapers with [Fluxlay](https://fluxlay.co
 | Example | Description | APIs used |
 | --- | --- | --- |
 | [hello-world](./hello-world) | Minimal template — a starting point for new projects. | — |
+| [shader-basic](./shader-basic) | Shadertoy-compatible GLSL fragment shader rendered fullscreen. Includes a reusable `<Shader />` component you can copy into your own project. | — (pure WebGL2) |
 | [mouse-follower](./mouse-follower) | Star particles drifting toward your cursor with React Spring physics. | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
 | [gradient-waves](./gradient-waves) | Layered gradient waves with time-of-day color shifts. | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
 | [particle-flow-field](./particle-flow-field) | Perlin-noise flow field with painterly particle trails. | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |

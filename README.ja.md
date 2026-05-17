@@ -2,7 +2,9 @@
 
 **日本語** | [English](./README.md)
 
-[Fluxlay](https://fluxlay.com) でライブ壁紙を作るための公式サンプル集です。各ディレクトリは単体で動作する独立したプロジェクトで、`@fluxlay/cli` の `dev` / `build` / `publish` コマンドにそのまま利用できます。
+[Fluxlay](https://fluxlay.com) でライブ壁紙を作るための公式サンプル & スターターテンプレート集です。各ディレクトリは単体で動作する独立したプロジェクトで、`@fluxlay/cli` の `dev` / `build` / `publish` コマンドにそのまま利用できます。**コピーして自由に編集**し、自分の壁紙の出発点として使ってください。
+
+`@fluxlay/react` SDK に**意図的に含めていない**パターン（WebGL ヘルパー、描画ユーティリティ、その他ブラウザ標準 API のラッパー）も、ここに置いてあります。SDK の責務はランタイム連携 API に絞っており、それ以外はユーザーが所有するコードとしてテンプレート化しています。
 
 📖 **ドキュメント:** [はじめに](https://fluxlay.com/docs/developer/tutorials/getting-started) · [CLI リファレンス](https://fluxlay.com/docs/developer/reference/cli/commands) · [マニフェストリファレンス](https://fluxlay.com/docs/developer/reference/cli/manifest) · [SDK リファレンス](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position)
 
@@ -11,6 +13,7 @@
 | サンプル | 概要 | 使われている API |
 | --- | --- | --- |
 | [hello-world](./hello-world) | 最小構成のテンプレート。新規プロジェクトの雛形に。 | — |
+| [shader-basic](./shader-basic) | Shadertoy 互換の GLSL フラグメントシェーダーをフルスクリーン描画。プロジェクトにコピーして使える `<Shader />` コンポーネント付き。 | — (純粋な WebGL2) |
 | [mouse-follower](./mouse-follower) | カーソルに追従する星粒子。React Spring 物理アニメーション。 | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
 | [gradient-waves](./gradient-waves) | 時間帯で色が変わる多層グラデーション波。 | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |
 | [particle-flow-field](./particle-flow-field) | Perlin ノイズによるフロー場と粒子トレイル。 | [`useMousePosition`](https://fluxlay.com/docs/developer/reference/sdk/use-mouse-position) |

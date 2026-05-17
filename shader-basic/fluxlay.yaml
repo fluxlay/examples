@@ -1,0 +1,13 @@
+schemaVersion: 1
+name: Shader Basic
+slug: shader-basic
+version: 0.1.0
+kind: web
+description: |
+  A Shadertoy-compatible GLSL fragment shader running fullscreen as a wallpaper.
+
+  Use this as a starting template for shader-based wallpapers. The `<Shader />`
+  component in `src/shader.tsx` is a small reusable wrapper around WebGL2 that
+  injects the standard Shadertoy uniforms (`iResolution`, `iTime`, `iTimeDelta`,
+  `iFrame`, `iMouse`), so most Shadertoy shaders can be pasted into
+  `src/wallpaper.frag` with no changes.
