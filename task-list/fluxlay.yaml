@@ -1,0 +1,14 @@
+schemaVersion: 1
+name: Task List
+slug: task-list
+version: 0.1.0
+kind: web
+permissions:
+  - keyboard
+  - ime-input
+description: |
+  壁紙上で動作するシンプルな ToDo リスト。
+  Mimo (`@fluxlay/react/mimo`) を使い、OS カーソルを通過させたまま
+  クリック・キーボード・IME 入力を壁紙の React DOM に届ける。
+  追加 / チェック / 削除はブラウザ標準の DOM API のみで完結し、
+  状態は `localStorage` に永続化される。
