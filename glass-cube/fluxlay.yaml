@@ -15,4 +15,4 @@ description: |
 
 network:
   - origin: https://raw.githack.com
-    reason: To load the GLB model
+    reason: Load the studio HDRI environment map (drei <Environment preset>) for the glass material.
