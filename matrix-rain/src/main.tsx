@@ -23,7 +23,7 @@ const MatrixRain = () => {
   const animRef = useRef(0);
   const info = useSystemMonitor({
     cpuIntervalMs: 500,
-    memoryIntervalMs: 5000,
+    memoryIntervalMs: 5000
   });
   const infoRef = useRef(info);
   infoRef.current = info;
@@ -48,7 +48,7 @@ const MatrixRain = () => {
           y: Math.random() * h * -1,
           speed: BASE_SPEED + Math.random() * 0.3,
           chars: Array.from({ length: charLen }, () => randomChar()),
-          charLen,
+          charLen
         };
       });
     };
@@ -144,17 +144,12 @@ const MatrixRain = () => {
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{ display: "block", width: "100%", height: "100%", background: "#000" }}
-    />
-  );
+  return <canvas ref={canvasRef} style={{ display: "block", width: "100%", height: "100%", background: "#000" }} />;
 };
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
     <MatrixRain />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

@@ -1,4 +1,5 @@
 import { memo } from "react";
+
 import { HEADER_HEIGHT } from "../constants";
 
 interface BpmDisplayProps {
@@ -18,7 +19,7 @@ function BpmDisplayImpl({ cpuUsage, isCritical, color }: BpmDisplayProps) {
         right: 32,
         top: HEADER_HEIGHT + 24,
         color: valueColor,
-        fontFamily: "var(--font-mono)",
+        fontFamily: "var(--font-mono)"
       }}
     >
       <div
@@ -28,15 +29,12 @@ function BpmDisplayImpl({ cpuUsage, isCritical, color }: BpmDisplayProps) {
           fontWeight: 600,
           lineHeight: 1,
           letterSpacing: "-0.04em",
-          textShadow: `0 0 24px ${valueColor}`,
+          textShadow: `0 0 24px ${valueColor}`
         }}
       >
         {safe.toFixed(0)}
       </div>
-      <div
-        className="text-[10px] tracking-[0.4em] uppercase mt-1"
-        style={{ color: "var(--color-text-dim)" }}
-      >
+      <div className="text-[10px] tracking-[0.4em] uppercase mt-1" style={{ color: "var(--color-text-dim)" }}>
         CPU · BPM (synth)
       </div>
     </div>

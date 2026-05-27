@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { formatTime } from "../utils/format";
 
 /** HH:MM:SS の現在時刻を 1 秒ごとに更新。 */

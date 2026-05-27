@@ -4,5 +4,5 @@ import { defineConfig } from "vite";
 import { fluxlay } from "@fluxlay/vite";
 
 export default defineConfig({
-  plugins: [react(), fluxlay()],
+  plugins: [react(), fluxlay()]
 });

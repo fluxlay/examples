@@ -4,13 +4,13 @@ export const SystemMonitor = () => {
   // 1. ターミナルを初期化
   const { terminalRef, instance } = useTerminal({
     fontSize: 12,
-    theme: TerminalThemes.light.default,
+    theme: TerminalThemes.light.default
   });
 
   // 2. シェル実行を管理（ターミナルインスタンスを渡す）
   const { error } = useShell("macchina", {
     terminal: instance,
-    refreshInterval: 60000,
+    refreshInterval: 60000
   });
 
   return (

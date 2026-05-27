@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "arrowParens": "avoid",
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "quoteProps": "as-needed",
+  "sortImports": {
+    "groups": ["builtin", "external", "ken109", "fluxlay", "internal", ["parent", "sibling", "index"]],
+    "customGroups": [
+      {
+        "groupName": "ken109",
+        "selector": "external",
+        "elementNamePattern": ["@ken109/**"]
+      },
+      {
+        "groupName": "fluxlay",
+        "selector": "external",
+        "elementNamePattern": ["@fluxlay/**"]
+      }
+    ],
+    "newlinesBetween": true
+  },
+  "sortPackageJson": true,
+  "ignorePatterns": [
+    "**/.nitro",
+    "**/.wrangler",
+    "**/.tanstack",
+    "**/.next",
+    "**/node_modules",
+    "**/dist",
+    "**/.output",
+    "**/tmp",
+    "**/ios",
+    "**/gen",
+    "**/*.gen.*",
+    "**/database.types.ts",
+    "**/worker-configuration.d.ts"
+  ]
+}

@@ -69,9 +69,7 @@ function buildFragmentSource(userSource: string): string {
   // Strip a user-provided `#version` line — we always inject our own.
   const withoutVersion = userSource.trim().replace(/^\s*#version[^\n]*\n?/, "");
   const isShadertoy = /\bvoid\s+mainImage\s*\(/.test(withoutVersion);
-  return isShadertoy
-    ? FRAGMENT_PREAMBLE + withoutVersion + SHADERTOY_FOOTER
-    : FRAGMENT_PREAMBLE + withoutVersion;
+  return isShadertoy ? FRAGMENT_PREAMBLE + withoutVersion + SHADERTOY_FOOTER : FRAGMENT_PREAMBLE + withoutVersion;
 }
 
 function compileShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader {
@@ -109,15 +107,7 @@ function setUniform(gl: WebGL2RenderingContext, location: WebGLUniformLocation, 
   if (value.length === 4) return gl.uniform4f(location, value[0], value[1], value[2], value[3]);
 }
 
-export function Shader({
-  fragment,
-  uniforms,
-  pixelRatio = 1,
-  paused = false,
-  onError,
-  className,
-  style
-}: ShaderProps) {
+export function Shader({ fragment, uniforms, pixelRatio = 1, paused = false, onError, className, style }: ShaderProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   // Latest values via refs so prop changes don't restart the render loop.
   const uniformsRef = useRef(uniforms);
@@ -211,7 +201,7 @@ export function Shader({
       if (current) {
         for (const name of Object.keys(current)) {
           const loc = locationFor(name);
-          if (loc) setUniform(gl, loc, current[name]!);
+          if (loc) setUniform(gl, loc, current[name]);
         }
       }
 

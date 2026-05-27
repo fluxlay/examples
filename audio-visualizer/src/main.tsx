@@ -1,6 +1,8 @@
-import { useAudio, useMediaMetadata, useProperties } from "@fluxlay/react";
 import { StrictMode, useCallback, useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
+
+import { useAudio, useMediaMetadata, useProperties } from "@fluxlay/react";
+
 import "./index.css";
 
 const BAR_COUNT = 128;
@@ -25,11 +27,7 @@ function AudioVisualizer() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animFrameRef = useRef<number>(0);
   const audio = useAudio({ numBands: BAR_COUNT });
-  const {
-    showMediaInfo = true,
-    transparentBg = true,
-    bgColor = "#000000",
-  } = useProperties<Properties>();
+  const { showMediaInfo = true, transparentBg = true, bgColor = "#000000" } = useProperties<Partial<Properties>>();
   const media = useMediaMetadata();
   const audioRef = useRef({ rms: 0, peak: 0, spectrum: [] as number[] });
   const smoothDataRef = useRef<Float32Array>(new Float32Array(BAR_COUNT));
@@ -56,7 +54,7 @@ function AudioVisualizer() {
     audioRef.current = {
       rms: audio.rms,
       peak: audio.peak,
-      spectrum: audio.spectrum,
+      spectrum: audio.spectrum
     };
   }, [audio.rms, audio.peak, audio.spectrum]);
 
@@ -123,14 +121,7 @@ function AudioVisualizer() {
     const hueShift = time * 20;
 
     // Draw outer glow — intensity scales with peak
-    const glowGrad = ctx.createRadialGradient(
-      cx,
-      cy,
-      baseRadius * 0.5,
-      cx,
-      cy,
-      baseRadius + maxBarHeight * 1.2,
-    );
+    const glowGrad = ctx.createRadialGradient(cx, cy, baseRadius * 0.5, cx, cy, baseRadius + maxBarHeight * 1.2);
     const glowIntensity = 0.02 + peak * 0.06;
     glowGrad.addColorStop(0, `rgba(100, 50, 255, ${glowIntensity})`);
     glowGrad.addColorStop(0.5, `rgba(0, 150, 255, ${glowIntensity * 0.6})`);
@@ -157,13 +148,7 @@ function AudioVisualizer() {
         ctx.clip();
         const artSize = (innerRadius - 4) * 2;
         ctx.globalAlpha = 0.8;
-        ctx.drawImage(
-          artworkImg,
-          -artSize / 2,
-          -artSize / 2,
-          artSize,
-          artSize,
-        );
+        ctx.drawImage(artworkImg, -artSize / 2, -artSize / 2, artSize, artSize);
         ctx.globalAlpha = 1;
         ctx.restore();
 
@@ -268,11 +253,7 @@ function AudioVisualizer() {
     for (let i = 0; i < particleCount; i++) {
       const seed = i * 137.508;
       const t = time * 0.3 + seed;
-      const orbitRadius =
-        baseRadius +
-        maxBarHeight * 0.8 +
-        Math.sin(t * 0.7 + seed) * 40 +
-        peak * 30;
+      const orbitRadius = baseRadius + maxBarHeight * 0.8 + Math.sin(t * 0.7 + seed) * 40 + peak * 30;
       const angle = (t * 0.2 + seed) % TWO_PI;
       const px = cx + Math.cos(angle) * orbitRadius;
       const py = cy + Math.sin(angle) * orbitRadius;
@@ -298,10 +279,7 @@ function AudioVisualizer() {
     return () => cancelAnimationFrame(animFrameRef.current);
   }, [draw]);
 
-  const progress =
-    media.duration && media.elapsedTime
-      ? media.elapsedTime / media.duration
-      : 0;
+  const progress = media.duration && media.elapsedTime ? media.elapsedTime / media.duration : 0;
 
   return (
     <div
@@ -311,14 +289,8 @@ function AudioVisualizer() {
       <canvas ref={canvasRef} className="absolute inset-0" />
       {showMediaInfo && (
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 pointer-events-none select-none text-center">
-          {media.title && (
-            <div className="text-white/70 text-lg font-light tracking-wider">
-              {media.title}
-            </div>
-          )}
-          {media.artist && (
-            <div className="text-white/40 text-sm mt-0.5">{media.artist}</div>
-          )}
+          {media.title && <div className="text-white/70 text-lg font-light tracking-wider">{media.title}</div>}
+          {media.artist && <div className="text-white/40 text-sm mt-0.5">{media.artist}</div>}
           {media.duration != null && media.duration > 0 && (
             <div className="mt-2 w-48 mx-auto h-[2px] bg-white/10 rounded-full overflow-hidden">
               <div
@@ -336,5 +308,5 @@ function AudioVisualizer() {
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <AudioVisualizer />
-  </StrictMode>,
+  </StrictMode>
 );

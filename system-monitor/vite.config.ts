@@ -5,5 +5,5 @@ import { defineConfig } from "vite";
 import { fluxlay } from "@fluxlay/vite";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), fluxlay()],
+  plugins: [react(), tailwindcss(), fluxlay()]
 });

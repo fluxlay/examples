@@ -11,12 +11,12 @@ A Shadertoy-compatible GLSL fragment shader running fullscreen as a Fluxlay wall
 
 Shadertoy-compatible — paste most Shadertoy shaders in unmodified.
 
-| Uniform | Type | Description |
-| --- | --- | --- |
-| `iResolution` | `vec3` | Viewport size in pixels (xy) and pixel aspect (z=1) |
-| `iTime` | `float` | Seconds since mount |
-| `iTimeDelta` | `float` | Seconds since last frame |
-| `iFrame` | `int` | Frame counter |
+| Uniform       | Type    | Description                                         |
+| ------------- | ------- | --------------------------------------------------- |
+| `iResolution` | `vec3`  | Viewport size in pixels (xy) and pixel aspect (z=1) |
+| `iTime`       | `float` | Seconds since mount                                 |
+| `iTimeDelta`  | `float` | Seconds since last frame                            |
+| `iFrame`      | `int`   | Frame counter                                       |
 
 ### Why no `iMouse`?
 
@@ -29,10 +29,7 @@ Use `useMousePosition()` from `@fluxlay/react` to read the cursor from the Fluxl
 Pass via the `uniforms` prop and re-upload each frame. `number` → `float`, `boolean` → `bool`, 2/3/4-tuples → `vec2`/`vec3`/`vec4`. Declare them in the shader with matching names and types.
 
 ```tsx
-<Shader
-  fragment={src}
-  uniforms={{ speed: 1.5, tint: [1, 0.5, 0.2] }}
-/>
+<Shader fragment={src} uniforms={{ speed: 1.5, tint: [1, 0.5, 0.2] }} />
 ```
 
 ```glsl

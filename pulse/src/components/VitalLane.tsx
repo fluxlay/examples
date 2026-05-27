@@ -1,4 +1,5 @@
 import { memo, type ReactNode, useEffect, useRef } from "react";
+
 import { LANE_LABEL_WIDTH } from "../constants";
 
 interface VitalLaneProps {
@@ -99,36 +100,21 @@ function VitalLaneImpl(props: VitalLaneProps) {
       className="flex"
       style={{
         height: props.height,
-        borderBottom: props.bottom ? "none" : "1px solid rgba(0,255,200,0.08)",
+        borderBottom: props.bottom ? "none" : "1px solid rgba(0,255,200,0.08)"
       }}
     >
-      <div
-        className="flex flex-col justify-center px-6 shrink-0 gap-1"
-        style={{ width: LANE_LABEL_WIDTH }}
-      >
-        <div
-          className="text-[14px] font-semibold tracking-[0.18em] uppercase"
-          style={{ color: props.color }}
-        >
+      <div className="flex flex-col justify-center px-6 shrink-0 gap-1" style={{ width: LANE_LABEL_WIDTH }}>
+        <div className="text-[14px] font-semibold tracking-[0.18em] uppercase" style={{ color: props.color }}>
           {props.medicalLabel}
         </div>
-        <div
-          className="text-[10px] tracking-[0.4em] uppercase"
-          style={{ color: "var(--color-text-dim)" }}
-        >
+        <div className="text-[10px] tracking-[0.4em] uppercase" style={{ color: "var(--color-text-dim)" }}>
           {props.meaningLabel}
         </div>
-        <div
-          className="text-[24px] tabular-nums leading-none mt-1"
-          style={{ color: "var(--color-text)" }}
-        >
+        <div className="text-[24px] tabular-nums leading-none mt-1" style={{ color: "var(--color-text)" }}>
           {props.primaryValue}
         </div>
         {props.secondaryValue ? (
-          <div
-            className="text-[11px] mt-0.5 tabular-nums"
-            style={{ color: "var(--color-text-dim)" }}
-          >
+          <div className="text-[11px] mt-0.5 tabular-nums" style={{ color: "var(--color-text-dim)" }}>
             {props.secondaryValue}
           </div>
         ) : null}

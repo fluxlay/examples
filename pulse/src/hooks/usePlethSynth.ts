@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
+
 import { PLETH_PHASE_OFFSET, SYNTH_BUFFER_SIZE, SYNTH_SAMPLES_PER_SECOND } from "../constants";
 
 /** 合成 PLETH 波形 (脈波)。ECG の phaseRef を参照して位相をオフセット。 */
 export function usePlethSynth(
   ecgPhaseRef: React.MutableRefObject<number>,
-  amplitude: () => number,
+  amplitude: () => number
 ): { getSnapshot: () => Float32Array } {
   const buffer = useMemo(() => new Float32Array(SYNTH_BUFFER_SIZE), []);
   const ordered = useMemo(() => new Float32Array(SYNTH_BUFFER_SIZE), []);

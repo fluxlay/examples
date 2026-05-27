@@ -8,7 +8,10 @@ export const App = () => {
       {/* Background decoration */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage: "radial-gradient(#000 1px, transparent 1px)", backgroundSize: "20px 20px" }}
+        style={{
+          backgroundImage: "radial-gradient(#000 1px, transparent 1px)",
+          backgroundSize: "20px 20px"
+        }}
       />
 
       {/* Header section */}

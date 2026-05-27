@@ -1,14 +1,16 @@
-import { useMousePosition } from "@fluxlay/react";
 import { Environment, MeshTransmissionMaterial, PerspectiveCamera, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
+import type { ThreeElements } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
 import * as THREE from "three";
+
+import { useMousePosition } from "@fluxlay/react";
 
 function GlassModel() {
   const { nodes } = useGLTF("/glass-cube.glb");
   const groupRef = useRef<THREE.Group>(null);
   const meshRef = useRef<THREE.Mesh>(null);
-  const mousePosition = useMousePosition();
+  const backendMouse = useMousePosition();
 
   const lastUpdateTime = useRef(0);
 
@@ -19,9 +21,9 @@ function GlassModel() {
 
     if (groupRef.current) {
       // バックエンドの座標があればそれを使用し、なければフロントエンドのマウス座標を使用する
-      const isBackendActive = mousePosition.x !== 0 || mousePosition.y !== 0;
-      const x = isBackendActive ? mousePosition.x : state.pointer.x;
-      const y = isBackendActive ? mousePosition.y : state.pointer.y;
+      const isBackendActive = backendMouse.x !== 0 || backendMouse.y !== 0;
+      const x = isBackendActive ? backendMouse.x : state.pointer.x;
+      const y = isBackendActive ? backendMouse.y : state.pointer.y;
 
       const targetRotationX = -y * 0.5;
       const targetRotationY = x * 0.5;
@@ -38,7 +40,10 @@ function GlassModel() {
 
   return (
     <group ref={groupRef} position={[0, 0, 0]}>
-      <mesh ref={meshRef} {...nodes.cube}>
+      <mesh
+        ref={meshRef}
+        geometry={(nodes.cube as unknown as THREE.Mesh).geometry as unknown as ThreeElements["mesh"]["geometry"]}
+      >
         <MeshTransmissionMaterial
           thickness={0.35}
           roughness={0}
@@ -77,7 +82,7 @@ function App() {
         gl={{
           antialias: true,
           toneMapping: THREE.ACESFilmicToneMapping,
-          toneMappingExposure: 1.2,
+          toneMappingExposure: 1.2
         }}
       >
         <color attach="background" args={["#000000"]} />

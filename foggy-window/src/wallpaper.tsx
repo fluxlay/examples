@@ -1,7 +1,9 @@
-import { useProperties } from "@fluxlay/react";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import * as THREE from "three";
+
+import { useProperties } from "@fluxlay/react";
+
 import { Background } from "./components/Background";
 import { RainLayer } from "./components/RainLayer";
 import { WindowGlass } from "./components/WindowGlass";
@@ -33,18 +35,9 @@ function Scene({ condensation, rainIntensity, cityLightBreath }: SceneProps) {
 
 export default function Wallpaper() {
   const props = useProperties<Partial<Properties>>();
-  const condensation =
-    typeof props.condensation === "number"
-      ? props.condensation
-      : DEFAULTS.condensation;
-  const rainIntensity =
-    typeof props.rainIntensity === "number"
-      ? props.rainIntensity
-      : DEFAULTS.rainIntensity;
-  const cityLightBreath =
-    typeof props.cityLightBreath === "number"
-      ? props.cityLightBreath
-      : DEFAULTS.cityLightBreath;
+  const condensation = typeof props.condensation === "number" ? props.condensation : DEFAULTS.condensation;
+  const rainIntensity = typeof props.rainIntensity === "number" ? props.rainIntensity : DEFAULTS.rainIntensity;
+  const cityLightBreath = typeof props.cityLightBreath === "number" ? props.cityLightBreath : DEFAULTS.cityLightBreath;
 
   return (
     <Canvas
@@ -56,15 +49,11 @@ export default function Wallpaper() {
         alpha: false,
         toneMapping: THREE.ACESFilmicToneMapping,
         toneMappingExposure: 1.0,
-        powerPreference: "high-performance",
+        powerPreference: "high-performance"
       }}
     >
       <Suspense fallback={null}>
-        <Scene
-          condensation={condensation}
-          rainIntensity={rainIntensity}
-          cityLightBreath={cityLightBreath}
-        />
+        <Scene condensation={condensation} rainIntensity={rainIntensity} cityLightBreath={cityLightBreath} />
       </Suspense>
     </Canvas>
   );

@@ -1,4 +1,5 @@
 import { memo } from "react";
+
 import { FOOTER_HEIGHT } from "../constants";
 
 interface PatientFooterProps {
@@ -14,14 +15,14 @@ function PatientFooterImpl({ isCritical, currentTime }: PatientFooterProps) {
       style={{
         height: FOOTER_HEIGHT,
         color: "var(--color-text-dim)",
-        borderTop: "1px solid rgba(0,255,200,0.12)",
+        borderTop: "1px solid rgba(0,255,200,0.12)"
       }}
     >
       <div className="flex items-center gap-3">
         <span
           className={isCritical ? "alert-flash" : ""}
           style={{
-            color: isCritical ? "var(--color-alert)" : "var(--color-text)",
+            color: isCritical ? "var(--color-alert)" : "var(--color-text)"
           }}
         >
           ▌ {isCritical ? "ALERT · CRITICAL LOAD" : "NORMAL OPERATION"}

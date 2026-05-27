@@ -1,7 +1,9 @@
-import { useMousePosition } from "@fluxlay/react";
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+
+import { useMousePosition } from "@fluxlay/react";
+
 import { approachRate, type EnvTarget, lerpScalar, lerpVec3 } from "../environment";
 import { COLOR_FIELD_GLSL } from "./color-field";
 import { ATLAS_COLS, ATLAS_ROWS, getSpriteAtlas } from "./sprite-atlas";
@@ -153,7 +155,7 @@ export function Particles({ env }: Props) {
       [0.32, 0.5, 0.44],
       [0.5, 0.68, 0.58],
       [0.38, 0.58, 0.78],
-      [0.92, 0.96, 1.0],
+      [0.92, 0.96, 1.0]
     ];
 
     const spriteWeights = [
@@ -162,7 +164,7 @@ export function Particles({ env }: Props) {
       { idx: 5, w: 0.18 },
       { idx: 2, w: 0.12 },
       { idx: 4, w: 0.08 },
-      { idx: 3, w: 0.04 },
+      { idx: 3, w: 0.04 }
     ];
     const pickSprite = () => {
       const r = Math.random();
@@ -181,7 +183,7 @@ export function Particles({ env }: Props) {
         x: (Math.random() - 0.5) * 24,
         y: (Math.random() - 0.5) * 16,
         z: (Math.random() - 0.5) * 10 - 2,
-        r: tight ? 0.7 + Math.random() * 1.2 : 2.4 + Math.random() * 3.0,
+        r: tight ? 0.7 + Math.random() * 1.2 : 2.4 + Math.random() * 3.0
       });
     }
 
@@ -246,9 +248,9 @@ export function Particles({ env }: Props) {
       uAtlasGrid: { value: new THREE.Vector2(ATLAS_COLS, ATLAS_ROWS) },
       uSunTint: { value: new THREE.Vector3(0.3, 0.52, 0.5) },
       uAmbient: { value: 0.7 },
-      uAgitation: { value: 0 },
+      uAgitation: { value: 0 }
     }),
-    [atlas],
+    [atlas]
   );
 
   useFrame((state, delta) => {

@@ -1,8 +1,9 @@
-import { runShell } from "@fluxlay/react";
 import { useEffect, useState } from "react";
 
+import { runShell } from "@fluxlay/react";
+
 export const NetworkStatus = () => {
-  const [ip, setIp] = useState<string>("Loading...");
+  const [ip, setIp] = useState("Loading...");
   const [error, setError] = useState<string | null>(null);
 
   const fetchIp = async () => {
@@ -16,7 +17,7 @@ export const NetworkStatus = () => {
   };
 
   useEffect(() => {
-    fetchIp();
+    void fetchIp();
     const interval = setInterval(fetchIp, 300000); // 5分ごとに更新
     return () => clearInterval(interval);
   }, []);

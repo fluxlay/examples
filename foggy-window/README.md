@@ -52,11 +52,11 @@ No code changes needed; the file path is the only configuration.
 
 ## Custom properties (`fluxlay.yaml`)
 
-| Key                | Type    | Default | Range / step       | Notes                                            |
-| ------------------ | ------- | ------- | ------------------ | ------------------------------------------------ |
-| `condensation`     | number  | 0.35    | 0 – 1 (0.05)       | Strength of the foggy glass effect.              |
-| `rainIntensity`    | number  | 0.6     | 0 – 2 (0.1)        | Density of background rain (behind glass).       |
-| `cityLightBreath`  | number  | 0.50    | 0 – 1.2 (0.05)     | Amplitude of the city-light pulsation/flicker.   |
+| Key               | Type   | Default | Range / step   | Notes                                          |
+| ----------------- | ------ | ------- | -------------- | ---------------------------------------------- |
+| `condensation`    | number | 0.35    | 0 – 1 (0.05)   | Strength of the foggy glass effect.            |
+| `rainIntensity`   | number | 0.6     | 0 – 2 (0.1)    | Density of background rain (behind glass).     |
+| `cityLightBreath` | number | 0.50    | 0 – 1.2 (0.05) | Amplitude of the city-light pulsation/flicker. |
 
 ## Architecture
 

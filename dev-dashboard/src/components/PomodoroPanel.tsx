@@ -102,15 +102,7 @@ export function PomodoroPanel({ workMinutes, breakMinutes }: PomodoroPanelProps)
   );
 }
 
-function ProgressRing({
-  progress,
-  ringClass,
-  children
-}: {
-  progress: number;
-  ringClass: string;
-  children: ReactNode;
-}) {
+function ProgressRing({ progress, ringClass, children }: { progress: number; ringClass: string; children: ReactNode }) {
   const size = 160;
   const stroke = 6;
   const radius = (size - stroke) / 2;

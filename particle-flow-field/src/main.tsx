@@ -16,8 +16,14 @@ const PERM = new Uint8Array(512);
 }
 
 const GRAD = [
-  [1, 1], [-1, 1], [1, -1], [-1, -1],
-  [1, 0], [-1, 0], [0, 1], [0, -1],
+  [1, 1],
+  [-1, 1],
+  [1, -1],
+  [-1, -1],
+  [1, 0],
+  [-1, 0],
+  [0, 1],
+  [0, -1]
 ];
 
 function noise2D(x: number, y: number): number {
@@ -70,9 +76,12 @@ const ParticleFlowField = () => {
       const x = Math.random() * w;
       const y = Math.random() * h;
       return {
-        x, y, prevX: x, prevY: y,
+        x,
+        y,
+        prevX: x,
+        prevY: y,
         speed: 0.5 + Math.random() * 1.0,
-        hueOffset: Math.random() * 60,
+        hueOffset: Math.random() * 60
       };
     });
   }, []);
@@ -132,10 +141,22 @@ const ParticleFlowField = () => {
         p.y += vy;
 
         // Wrap around
-        if (p.x < 0) { p.x += w; p.prevX = p.x; }
-        if (p.x > w) { p.x -= w; p.prevX = p.x; }
-        if (p.y < 0) { p.y += h; p.prevY = p.y; }
-        if (p.y > h) { p.y -= h; p.prevY = p.y; }
+        if (p.x < 0) {
+          p.x += w;
+          p.prevX = p.x;
+        }
+        if (p.x > w) {
+          p.x -= w;
+          p.prevX = p.x;
+        }
+        if (p.y < 0) {
+          p.y += h;
+          p.prevY = p.y;
+        }
+        if (p.y > h) {
+          p.y -= h;
+          p.prevY = p.y;
+        }
 
         // Color based on angle
         const hue = ((angle / (Math.PI * 4)) * 180 + 200 + p.hueOffset) % 360;
@@ -161,17 +182,12 @@ const ParticleFlowField = () => {
     };
   }, [initParticles]);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{ display: "block", width: "100%", height: "100%", background: "#000" }}
-    />
-  );
+  return <canvas ref={canvasRef} style={{ display: "block", width: "100%", height: "100%", background: "#000" }} />;
 };
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
     <ParticleFlowField />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

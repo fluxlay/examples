@@ -1,4 +1,5 @@
 import { memo } from "react";
+
 import { HEADER_HEIGHT, MENUBAR_OFFSET } from "../constants";
 import { formatUptimeLong } from "../utils/format";
 
@@ -19,7 +20,7 @@ function PatientHeaderImpl(props: PatientHeaderProps) {
         height: HEADER_HEIGHT,
         paddingTop: MENUBAR_OFFSET,
         color: "var(--color-text-dim)",
-        borderBottom: "1px solid rgba(0,255,200,0.12)",
+        borderBottom: "1px solid rgba(0,255,200,0.12)"
       }}
     >
       <div className="flex items-center gap-6 min-w-0">

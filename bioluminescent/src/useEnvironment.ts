@@ -1,5 +1,7 @@
-import { useShell } from "@fluxlay/react";
 import { useEffect, useMemo, useState } from "react";
+
+import { useShell } from "@fluxlay/react";
+
 import { buildEnvTarget, type EnvTarget, parseWeather, phaseFromDate } from "./environment";
 
 // dev-only time-lapse: > 0 cycles the full 24h day in this many seconds.
@@ -18,9 +20,7 @@ export function useEnvironment(): EnvTarget {
 
   return useMemo(() => {
     const phase =
-      DEMO_CYCLE_SECONDS > 0
-        ? (((now.getTime() / 1000 / DEMO_CYCLE_SECONDS) % 1) + 1) % 1
-        : phaseFromDate(now);
+      DEMO_CYCLE_SECONDS > 0 ? (((now.getTime() / 1000 / DEMO_CYCLE_SECONDS) % 1) + 1) % 1 : phaseFromDate(now);
     const w = parseWeather(weather.result?.stdout);
     return buildEnvTarget(phase, w);
   }, [now, weather.result?.stdout]);

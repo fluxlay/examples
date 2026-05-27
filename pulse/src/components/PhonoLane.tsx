@@ -1,4 +1,5 @@
 import { memo, useEffect, useRef } from "react";
+
 import { LANE_LABEL_WIDTH } from "../constants";
 
 interface PhonoLaneProps {
@@ -32,7 +33,7 @@ function PhonoLaneImpl({
   peakRef: _peakRef,
   spectrumRef,
   height,
-  bottom,
+  bottom
 }: PhonoLaneProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -184,20 +185,14 @@ function PhonoLaneImpl({
       className="flex"
       style={{
         height,
-        borderBottom: bottom ? "none" : "1px solid rgba(0,255,200,0.08)",
+        borderBottom: bottom ? "none" : "1px solid rgba(0,255,200,0.08)"
       }}
     >
-      <div
-        className="flex flex-col justify-center px-6 shrink-0 gap-1"
-        style={{ width: LANE_LABEL_WIDTH }}
-      >
+      <div className="flex flex-col justify-center px-6 shrink-0 gap-1" style={{ width: LANE_LABEL_WIDTH }}>
         <div className="text-[14px] font-semibold tracking-[0.18em] uppercase" style={{ color }}>
           PHONO
         </div>
-        <div
-          className="text-[10px] tracking-[0.4em] uppercase"
-          style={{ color: "var(--color-text-dim)" }}
-        >
+        <div className="text-[10px] tracking-[0.4em] uppercase" style={{ color: "var(--color-text-dim)" }}>
           Audio
         </div>
         <div

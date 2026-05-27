@@ -6,9 +6,7 @@ import type { ReactNode } from "react";
 export function Panel({ header, children }: { header: ReactNode; children: ReactNode }) {
   return (
     <section className="flex h-full flex-col border-r border-b border-zinc-800 last:border-r-0 [&:nth-last-child(-n+2)]:border-b-0 odd:[&:nth-last-child(-n+2)]:border-b-0">
-      <div className="flex items-center justify-between border-b border-zinc-800/60 px-6 py-3">
-        {header}
-      </div>
+      <div className="flex items-center justify-between border-b border-zinc-800/60 px-6 py-3">{header}</div>
       <div className="flex-1 overflow-y-auto">{children}</div>
     </section>
   );

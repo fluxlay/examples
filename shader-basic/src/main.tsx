@@ -1,6 +1,7 @@
-import { useMousePosition } from "@fluxlay/react";
 import { StrictMode, useMemo } from "react";
 import { createRoot } from "react-dom/client";
+
+import { useMousePosition } from "@fluxlay/react";
 
 import { Shader } from "./shader.tsx";
 

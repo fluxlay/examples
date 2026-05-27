@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "import", "jsx-a11y"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "eslint/no-param-reassign": "error",
+    "eslint/no-unused-vars": [
+      "error",
+      {
+        "caughtErrors": "none",
+        "argsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "import/namespace": "off",
+    "typescript/consistent-type-imports": "error",
+    "typescript/no-floating-promises": "error",
+    "react/exhaustive-deps": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/self-closing-comp": "error",
+    "jsx-a11y/anchor-has-content": "off",
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "jsx-a11y/control-has-associated-label": "off"
+  },
+  "ignorePatterns": [
+    "**/.nitro",
+    "**/.wrangler",
+    "**/.tanstack",
+    "**/.next",
+    "**/node_modules",
+    "**/dist",
+    "**/.output",
+    "**/tmp",
+    "**/.expo",
+    "**/ios",
+    "**/gen",
+    "**/*.gen.*",
+    "**/database.types.ts",
+    "**/worker-configuration.d.ts",
+    "**/supabase/functions/**"
+  ]
+}

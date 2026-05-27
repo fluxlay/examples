@@ -1,14 +1,16 @@
-import { useMousePosition } from "@fluxlay/react";
 import { animated, useSprings } from "@react-spring/web";
 import React, { useEffect, useMemo } from "react";
 import { createRoot } from "react-dom/client";
+
+import { useMousePosition } from "@fluxlay/react";
+
 import "./index.css";
 
 const PARTICLE_COUNT = 80; // パーティクルを増量
 const STAR_COLORS = ["#FFFFFF", "#FFF9E3", "#E3F2FF", "#B3E5FC", "#FFFDE7"];
 
 const MouseFollower = () => {
-  const mousePosition = useMousePosition();
+  const backendMouse = useMousePosition();
 
   // 星々の初期配置とプロパティ
   const stars = useMemo(() => {
@@ -18,7 +20,7 @@ const MouseFollower = () => {
       y: Math.random() * window.innerHeight,
       color: STAR_COLORS[Math.floor(Math.random() * STAR_COLORS.length)],
       size: Math.random() * 3 + 1, // 大きさにばらつき
-      opacity: Math.random() * 0.5 + 0.3, // 初期不透明度
+      opacity: Math.random() * 0.5 + 0.3 // 初期不透明度
     }));
   }, []);
 
@@ -27,14 +29,14 @@ const MouseFollower = () => {
     y: stars[i].y,
     scale: 1,
     opacity: stars[i].opacity,
-    config: { tension: 120, friction: 14 },
+    config: { tension: 120, friction: 14 }
   }));
 
   useEffect(() => {
-    const mx = ((mousePosition.x + 1) / 2) * window.innerWidth;
-    const my = (1 - (mousePosition.y + 1) / 2) * window.innerHeight;
+    const mx = ((backendMouse.x + 1) / 2) * window.innerWidth;
+    const my = (1 - (backendMouse.y + 1) / 2) * window.innerHeight;
 
-    api.start(i => {
+    void api.start(i => {
       const s = stars[i];
       const dx = mx - s.x;
       const dy = my - s.y;
@@ -55,11 +57,11 @@ const MouseFollower = () => {
         config: {
           // より重厚でゆっくりとした動きに（tension を下げ、friction を上げる）
           tension: influence > 0 ? 80 : 40,
-          friction: influence > 0 ? 30 : 60,
-        },
+          friction: influence > 0 ? 30 : 60
+        }
       };
     });
-  }, [mousePosition.x, mousePosition.y, api, stars]);
+  }, [backendMouse.x, backendMouse.y, api, stars]);
 
   return (
     <div className="w-full h-full bg-[#050B18] overflow-hidden relative">
@@ -69,7 +71,7 @@ const MouseFollower = () => {
         {stars.map((s1, i) =>
           stars.slice(i + 1, i + 3).map(
             (
-              s2, // 接続をさらに絞って繊細に
+              s2 // 接続をさらに絞って繊細に
             ) => (
               <animated.line
                 key={`${s1.id}-${s2.id}`}
@@ -86,8 +88,8 @@ const MouseFollower = () => {
                 })}
                 strokeWidth={0.5}
               />
-            ),
-          ),
+            )
+          )
         )}
       </svg>
 
@@ -106,7 +108,7 @@ const MouseFollower = () => {
             y: style.y,
             scale: style.scale,
             opacity: style.opacity,
-            boxShadow: `0 0 ${stars[i].size * 2}px ${stars[i].color}`,
+            boxShadow: `0 0 ${stars[i].size * 2}px ${stars[i].color}`
           }}
         />
       ))}
@@ -123,5 +125,5 @@ const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
     <MouseFollower />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

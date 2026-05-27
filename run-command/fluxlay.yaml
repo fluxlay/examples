@@ -1,18 +1,18 @@
 schemaVersion: 1
 name: Run Command
 slug: run-command
-version: 0.1.1
+version: 0.1.2
 kind: web
 description: |
   Turn your desktop into a live system dashboard. This wallpaper demonstrates Fluxlay's shell integration by executing real commands and displaying their output directly on your desktop.
-  
+
   Features:
   - System Monitor — Displays hardware and OS information via macchina, rendered in an embedded terminal with auto-refresh
   - Battery Status — Shows real-time battery level and charging state using pmset
   - Network Info — Fetches and displays your public IP address via curl
-  
+
   All data updates automatically at configurable intervals, keeping your desktop informative at a glance. Built with a clean, minimal design using a light monospace aesthetic with subtle dot-grid background.
-  
+
   Requirements: macOS, macchina, curl, jq
 
 shell:

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 import { useSystemMonitor } from "@fluxlay/react";
+
 import "./index.css";
 
 function useDarkMode(): boolean {
@@ -102,7 +103,7 @@ function GaugeBar({
   value,
   max,
   colorKey,
-  unit,
+  unit
 }: {
   label: string;
   value: number;
@@ -127,7 +128,7 @@ function GaugeBar({
           className={`absolute inset-y-0 left-0 rounded-sm transition-all duration-500 ease-out ${bgClass(colorKey)}`}
           style={{
             width: `${percent}%`,
-            boxShadow: isHigh ? `0 0 12px ${color}` : `0 0 4px color-mix(in srgb, ${color} 33%, transparent)`,
+            boxShadow: isHigh ? `0 0 12px ${color}` : `0 0 4px color-mix(in srgb, ${color} 33%, transparent)`
           }}
         />
         <div className="absolute inset-y-0 w-0.5 bg-text-muted animate-pulse" style={{ left: `${percent}%` }} />
@@ -152,7 +153,7 @@ function CoreGrid({ cores }: { cores: number[] }) {
               style={{
                 backgroundColor: `color-mix(in srgb, ${color} ${Math.max(15, intensity * 100)}%, transparent)`,
                 boxShadow: usage > 60 ? `0 0 6px color-mix(in srgb, ${color} 27%, transparent)` : "none",
-                color: intensity > 0.4 ? "var(--color-core-text-active)" : "var(--color-core-text-idle)",
+                color: intensity > 0.4 ? "var(--color-core-text-active)" : "var(--color-core-text-idle)"
               }}
             >
               {usage.toFixed(0)}
@@ -186,7 +187,7 @@ function BatteryIndicator({ level, charging }: { level: number | null; charging:
             key={i.toString()}
             className={`h-3 flex-1 rounded-[1px] transition-all duration-300 ${i < filled ? bgClass(key) : "bg-bar-bg"}`}
             style={{
-              boxShadow: i < filled ? `0 0 6px color-mix(in srgb, ${color} 33%, transparent)` : "none",
+              boxShadow: i < filled ? `0 0 6px color-mix(in srgb, ${color} 33%, transparent)` : "none"
             }}
           />
         ))}
@@ -198,7 +199,7 @@ function BatteryIndicator({ level, charging }: { level: number | null; charging:
 function IoPanel({
   label,
   colorKey,
-  rows,
+  rows
 }: {
   label: string;
   colorKey: ColorKey;
@@ -229,7 +230,7 @@ const SystemMonitor = () => {
     diskSpaceIntervalMs: 30000,
     batteryIntervalMs: 10000,
     processIntervalMs: 10000,
-    loadAverageIntervalMs: 5000,
+    loadAverageIntervalMs: 5000
   });
   useDarkMode();
   const prevCpuRef = useRef(0);
@@ -247,7 +248,7 @@ const SystemMonitor = () => {
       <div
         className="absolute inset-0 pointer-events-none transition-all duration-1000"
         style={{
-          background: `radial-gradient(ellipse at 50% 50%, ${glowColor} 0%, transparent 70%)`,
+          background: `radial-gradient(ellipse at 50% 50%, ${glowColor} 0%, transparent 70%)`
         }}
       />
 
@@ -310,7 +311,7 @@ const SystemMonitor = () => {
           colorKey="accent"
           rows={[
             { icon: "▼", label: "RX", value: formatSpeed(info.networkRxBytesPerSec) },
-            { icon: "▲", label: "TX", value: formatSpeed(info.networkTxBytesPerSec) },
+            { icon: "▲", label: "TX", value: formatSpeed(info.networkTxBytesPerSec) }
           ]}
         />
 
@@ -320,7 +321,7 @@ const SystemMonitor = () => {
           colorKey="accent-purple"
           rows={[
             { icon: "◀", label: "READ", value: formatSpeed(info.diskReadBytesPerSec) },
-            { icon: "▶", label: "WRITE", value: formatSpeed(info.diskWriteBytesPerSec) },
+            { icon: "▶", label: "WRITE", value: formatSpeed(info.diskWriteBytesPerSec) }
           ]}
         />
 
@@ -366,5 +367,5 @@ const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
     <SystemMonitor />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

@@ -7,5 +7,5 @@ import { Wallpaper } from "./Wallpaper";
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <Wallpaper />
-  </StrictMode>,
+  </StrictMode>
 );

@@ -1,10 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import {
-  RESP_NOISE_AMPLITUDE,
-  RESP_PERIOD_SECONDS,
-  SYNTH_BUFFER_SIZE,
-  SYNTH_SAMPLES_PER_SECOND,
-} from "../constants";
+
+import { RESP_NOISE_AMPLITUDE, RESP_PERIOD_SECONDS, SYNTH_BUFFER_SIZE, SYNTH_SAMPLES_PER_SECOND } from "../constants";
 
 /** 合成 RESP 波形 (呼吸)。RESP_PERIOD_SECONDS 周期の正弦波 + 微ノイズ。 */
 export function useRespSynth(amplitude: () => number): { getSnapshot: () => Float32Array } {

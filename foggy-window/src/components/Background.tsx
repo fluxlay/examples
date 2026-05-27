@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import type { MutableRefObject, RefObject } from "react";
 import * as THREE from "three";
+
 import { BG_TEXTURE_PATH, PARALLAX_STRENGTH } from "../constants";
 import { ScreenQuadMesh } from "./ScreenQuadMesh";
 
@@ -111,12 +112,12 @@ export function Background({ mouseRef, cityLightBreath }: Props) {
       uMouse: { value: new THREE.Vector2(0.5, 0.5) },
       uParallax: { value: PARALLAX_STRENGTH },
       uTime: { value: 0 },
-      uBreathStrength: { value: cityLightBreath },
+      uBreathStrength: { value: cityLightBreath }
     }),
-    [],
+    []
   );
 
-  useFrame((state) => {
+  useFrame(state => {
     const m = matRef.current;
     if (!m) return;
     if (texture && texture.image) {
@@ -126,10 +127,7 @@ export function Background({ mouseRef, cityLightBreath }: Props) {
       const h = img.naturalHeight || img.height || 1;
       (m.uniforms.uTexSize.value as THREE.Vector2).set(w, h);
     }
-    (m.uniforms.uResolution.value as THREE.Vector2).set(
-      state.size.width,
-      state.size.height,
-    );
+    (m.uniforms.uResolution.value as THREE.Vector2).set(state.size.width, state.size.height);
     if (mouseRef.current) {
       (m.uniforms.uMouse.value as THREE.Vector2).copy(mouseRef.current);
     }

@@ -7,13 +7,7 @@ const CELL = 128;
 
 type Draw = (ctx: CanvasRenderingContext2D, size: number) => void;
 
-function radial(
-  ctx: CanvasRenderingContext2D,
-  cx: number,
-  cy: number,
-  r: number,
-  stops: [number, string][],
-) {
+function radial(ctx: CanvasRenderingContext2D, cx: number, cy: number, r: number, stops: [number, string][]) {
   const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
   for (const [o, c] of stops) grad.addColorStop(o, c);
   ctx.fillStyle = grad;
@@ -30,7 +24,7 @@ const hardPinprick: Draw = (ctx, s) => {
   radial(ctx, cx, cy, s * 0.06, [
     [0, "rgba(255,255,255,1)"],
     [0.5, "rgba(255,255,255,0.75)"],
-    [1, "rgba(255,255,255,0)"],
+    [1, "rgba(255,255,255,0)"]
   ]);
 };
 
@@ -43,7 +37,7 @@ const crispSmall: Draw = (ctx, s) => {
     [0.55, "rgba(255,255,255,0.92)"],
     [0.82, "rgba(255,255,255,0.55)"],
     [0.96, "rgba(255,255,255,0.12)"],
-    [1, "rgba(255,255,255,0)"],
+    [1, "rgba(255,255,255,0)"]
   ]);
 };
 
@@ -54,7 +48,7 @@ const dimPinprick: Draw = (ctx, s) => {
   radial(ctx, cx, cy, s * 0.08, [
     [0, "rgba(255,255,255,0.7)"],
     [0.5, "rgba(255,255,255,0.4)"],
-    [1, "rgba(255,255,255,0)"],
+    [1, "rgba(255,255,255,0)"]
   ]);
 };
 
@@ -84,7 +78,7 @@ const crispDisc: Draw = (ctx, s) => {
     [0.72, "rgba(255,255,255,0.85)"],
     [0.9, "rgba(255,255,255,0.5)"],
     [0.98, "rgba(255,255,255,0.1)"],
-    [1, "rgba(255,255,255,0)"],
+    [1, "rgba(255,255,255,0)"]
   ]);
 };
 
@@ -104,19 +98,12 @@ const organicBlob: Draw = (ctx, s) => {
       [0, "rgba(255,255,255,0.78)"],
       [0.6, "rgba(255,255,255,0.6)"],
       [0.92, "rgba(255,255,255,0.15)"],
-      [1, "rgba(255,255,255,0)"],
+      [1, "rgba(255,255,255,0)"]
     ]);
   }
 };
 
-const SPRITES: Draw[] = [
-  hardPinprick,
-  crispSmall,
-  dimPinprick,
-  tinyCluster,
-  crispDisc,
-  organicBlob,
-];
+const SPRITES: Draw[] = [hardPinprick, crispSmall, dimPinprick, tinyCluster, crispDisc, organicBlob];
 
 let cached: THREE.CanvasTexture | null = null;
 

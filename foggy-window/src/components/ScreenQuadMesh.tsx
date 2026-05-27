@@ -1,6 +1,7 @@
+import type { ThreeElements } from "@react-three/fiber";
 import { useMemo } from "react";
-import * as THREE from "three";
 import type { ReactNode, Ref } from "react";
+import * as THREE from "three";
 
 interface Props {
   children: ReactNode;
@@ -21,7 +22,7 @@ export function ScreenQuadMesh({ children, renderOrder, meshRef }: Props) {
   return (
     <mesh
       ref={meshRef}
-      geometry={geometry}
+      geometry={geometry as unknown as ThreeElements["mesh"]["geometry"]}
       renderOrder={renderOrder}
       frustumCulled={false}
     >

@@ -1,8 +1,9 @@
-import { runShell } from "@fluxlay/react";
 import { useEffect, useState } from "react";
 
+import { runShell } from "@fluxlay/react";
+
 export const BatteryStatus = () => {
-  const [battery, setBattery] = useState<string>("Loading...");
+  const [battery, setBattery] = useState("Loading...");
   const [error, setError] = useState<string | null>(null);
 
   const fetchBattery = async () => {
@@ -16,7 +17,7 @@ export const BatteryStatus = () => {
   };
 
   useEffect(() => {
-    fetchBattery();
+    void fetchBattery();
     const interval = setInterval(fetchBattery, 10000); // 1分ごとに更新
     return () => clearInterval(interval);
   }, []);
@@ -36,7 +37,10 @@ export const BatteryStatus = () => {
           {error ? <span className="text-red-600 text-xs">{error}</span> : battery}
         </div>
         <div className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">
-          {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+          {new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+          })}
         </div>
       </div>
     </section>

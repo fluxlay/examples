@@ -1,4 +1,3 @@
-
 // Small formatting helpers shared across panels.
 
 export function formatRelative(iso: string): string {

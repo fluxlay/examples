@@ -1,7 +1,7 @@
 schemaVersion: 1
 name: Glass Cube
 slug: glass-cube
-version: 0.1.1
+version: 0.1.2
 kind: web
 description: |
   A mesmerizing 3D glass cube that reacts to your mouse cursor. This wallpaper showcases Fluxlay's mouse tracking and Three.js integration with real-time rendering.
@@ -12,3 +12,7 @@ description: |
   - Minimal Aesthetic — Clean black background with subtle horizontal lines, studio-lit environment
 
   Built with React Three Fiber, Drei, and a custom GLB model for high-quality 3D visuals directly on your desktop.
+
+network:
+  - origin: https://raw.githack.com
+    reason: To load the GLB model

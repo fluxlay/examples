@@ -1,6 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+
 import { approachRate, type EnvTarget, lerpScalar, lerpVec3 } from "../environment";
 
 const vert = /* glsl */ `
@@ -53,9 +54,9 @@ export function GodRays({ env }: Props) {
       uSunTint: { value: new THREE.Vector3(0.3, 0.52, 0.5) },
       uLight: { value: 0.7 },
       uHaze: { value: 0.25 },
-      uSunX: { value: 0 },
+      uSunX: { value: 0 }
     }),
-    [],
+    []
   );
 
   useFrame((state, delta) => {

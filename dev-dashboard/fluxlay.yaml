@@ -5,13 +5,13 @@ version: 0.1.0
 kind: web
 description: |
   GitHub の PR、Google カレンダーの予定、Pomodoro タイマーを 2x2 のダッシュボードにまとめた開発者向け壁紙。Fluxlay SDK のホスト連携 API (`proxiedFetch` / `openUrl` / `notify`) と Mimo によるクリック注入を一通りカバーする。
-  
+
   Features:
   - My Open PRs — 自分が作成した Open な Pull Request。クリックで既定ブラウザに遷移
   - Review Requested — 自分にレビュー依頼が来ている Open な PR
   - Today's Calendar — Google カレンダーの今日〜明日の予定。進行中はハイライト
   - Pomodoro — 作業 / 休憩を交互にカウントダウンし、phase 切替時に OS 通知
-  
+
   GitHub PAT (`repo` スコープ) と Google カレンダーの「予定の非公開 URL (ICS 形式)」をプロパティに設定する。空のパネルはヒントを表示するので、必要なものだけ埋めれば動く。
 network:
   - origin: https://api.github.com

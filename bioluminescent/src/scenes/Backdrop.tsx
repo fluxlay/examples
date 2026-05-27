@@ -1,6 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+
 import { approachRate, type EnvTarget, lerpScalar, lerpVec3 } from "../environment";
 import { COLOR_FIELD_GLSL } from "./color-field";
 
@@ -96,9 +97,9 @@ export function Backdrop({ env }: Props) {
       uSkyTint: { value: new THREE.Vector3(0.15, 0.35, 0.5) },
       uLight: { value: 0.7 },
       uHaze: { value: 0.25 },
-      uSunX: { value: 0 },
+      uSunX: { value: 0 }
     }),
-    [],
+    []
   );
 
   useFrame((state, delta) => {

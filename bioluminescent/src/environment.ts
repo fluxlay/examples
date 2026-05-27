@@ -34,7 +34,7 @@ const KEYS: Key[] = [
   { t: 0.73, sun: [1.2, 0.65, 0.35], sky: [0.42, 0.28, 0.25], light: 0.85, haze: 0.4 },
   { t: 0.77, sun: [1.1, 0.4, 0.3], sky: [0.32, 0.15, 0.22], light: 0.6, haze: 0.5 },
   { t: 0.83, sun: [0.4, 0.28, 0.5], sky: [0.12, 0.1, 0.22], light: 0.38, haze: 0.35 },
-  { t: 1.0, sun: [0.05, 0.12, 0.2], sky: [0.0, 0.02, 0.05], light: 0.18, haze: 0.15 },
+  { t: 1.0, sun: [0.05, 0.12, 0.2], sky: [0.0, 0.02, 0.05], light: 0.18, haze: 0.15 }
 ];
 
 function lerp(a: number, b: number, t: number): number {
@@ -59,7 +59,7 @@ function paletteForPhase(phase: number) {
         sun: lerp3(a.sun, b.sun, u),
         sky: lerp3(a.sky, b.sky, u),
         light: lerp(a.light, b.light, u),
-        haze: lerp(a.haze, b.haze, u),
+        haze: lerp(a.haze, b.haze, u)
       };
     }
   }
@@ -87,7 +87,7 @@ const DEFAULT_WEATHER: WeatherSummary = {
   kind: "clear",
   cloudCover: 0.1,
   precip: 0.0,
-  thunder: false,
+  thunder: false
 };
 
 function clamp01(n: number): number {
@@ -139,7 +139,7 @@ export function buildEnvTarget(phase: number, weather: WeatherSummary): EnvTarge
     sunTint,
     skyTint: pal.sky,
     haze,
-    agitation,
+    agitation
   };
 }
 

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
+
 import { SYNTH_BUFFER_SIZE, SYNTH_SAMPLES_PER_SECOND } from "../constants";
 
 /** 合成 ECG 波形を生成し ring buffer に貯めるフック。
@@ -6,7 +7,7 @@ import { SYNTH_BUFFER_SIZE, SYNTH_SAMPLES_PER_SECOND } from "../constants";
  *  phaseRef は PLETH 同期用に外部公開する。 */
 export function useEcgSynth(
   bpm: () => number,
-  amplitude: () => number,
+  amplitude: () => number
 ): {
   getSnapshot: () => Float32Array;
   phaseRef: React.MutableRefObject<number>;

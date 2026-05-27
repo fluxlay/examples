@@ -1,6 +1,8 @@
-import { useAudio, useMediaMetadata, useProperties, useSystemMonitor } from "@fluxlay/react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
+
+import { useAudio, useMediaMetadata, useProperties, useSystemMonitor } from "@fluxlay/react";
+
 import "./index.css";
 
 const BAR_COUNT = 128;
@@ -13,9 +15,7 @@ type Properties = {
 };
 
 function useTheme(mode: ThemeMode): boolean {
-  const [systemDark, setSystemDark] = useState(() =>
-    window.matchMedia("(prefers-color-scheme: dark)").matches,
-  );
+  const [systemDark, setSystemDark] = useState(() => window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
@@ -90,7 +90,7 @@ function CoreGrid({ cores }: { cores: number[] }) {
               className="h-3 font-mono text-[8px] flex items-center justify-center tabular-nums"
               style={{
                 backgroundColor: `color-mix(in srgb, var(--color-fg) ${intensity * 100}%, transparent)`,
-                color: usage > 50 ? "var(--color-bg)" : "var(--color-fg-muted)",
+                color: usage > 50 ? "var(--color-bg)" : "var(--color-fg-muted)"
               }}
             >
               {usage.toFixed(0)}
@@ -112,17 +112,12 @@ function BatteryIndicator({ level, charging }: { level: number | null; charging:
   return (
     <div className="flex flex-col gap-1">
       <div className="flex justify-between items-baseline font-mono text-[10px]">
-        <span className="tracking-[0.25em] uppercase text-fg-strong">
-          BATTERY{charging ? " · CHG" : ""}
-        </span>
+        <span className="tracking-[0.25em] uppercase text-fg-strong">BATTERY{charging ? " · CHG" : ""}</span>
         <span className="text-fg-muted tabular-nums">{level.toFixed(1)}%</span>
       </div>
       <div className="flex gap-[2px]">
         {Array.from({ length: segments }).map((_, i) => (
-          <div
-            key={i.toString()}
-            className={`h-2 flex-1 ${i < filled ? "bg-fg-strong" : "bg-track"}`}
-          />
+          <div key={i.toString()} className={`h-2 flex-1 ${i < filled ? "bg-fg-strong" : "bg-track"}`} />
         ))}
       </div>
     </div>
@@ -134,7 +129,7 @@ function IoRow({ label, rows }: { label: string; rows: { label: string; value: s
     <div className="flex flex-col gap-1 font-mono text-[10px]">
       <div className="tracking-[0.25em] uppercase text-fg-strong">{label}</div>
       <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5">
-        {rows.map((row) => (
+        {rows.map(row => (
           <React.Fragment key={row.label}>
             <span className="text-fg-muted">{row.label}</span>
             <span className="text-fg-sub text-right tabular-nums">{row.value}</span>
@@ -232,8 +227,7 @@ function AudioStrip({ heightRatio = 0.18 }: { heightRatio?: number }) {
 function MediaInfoLine() {
   const media = useMediaMetadata();
   if (!media.title && !media.artist) return null;
-  const progress =
-    media.duration && media.elapsedTime ? media.elapsedTime / media.duration : 0;
+  const progress = media.duration && media.elapsedTime ? media.elapsedTime / media.duration : 0;
   return (
     <div className="flex items-center gap-3 font-mono text-[10px] text-fg-sub tracking-[0.15em] uppercase">
       <span className="text-fg-strong truncate max-w-[40ch]">{media.title || "—"}</span>
@@ -251,7 +245,7 @@ function MediaInfoLine() {
 }
 
 const MonochromeMonitor = () => {
-  const { themeMode = "auto", showMediaInfo = true } = useProperties<Properties>();
+  const { themeMode = "auto", showMediaInfo = true } = useProperties<Partial<Properties>>();
   useTheme(themeMode);
 
   const info = useSystemMonitor({
@@ -262,7 +256,7 @@ const MonochromeMonitor = () => {
     diskSpaceIntervalMs: 30000,
     batteryIntervalMs: 10000,
     processIntervalMs: 10000,
-    loadAverageIntervalMs: 5000,
+    loadAverageIntervalMs: 5000
   });
 
   const prevCpuRef = useRef(0);
@@ -295,10 +289,7 @@ const MonochromeMonitor = () => {
           PROCS <span className="text-fg-strong tabular-nums">{info.processCount.toLocaleString()}</span>
         </div>
         <div className="text-fg-muted">
-          LOAD{" "}
-          <span className="text-fg-strong tabular-nums">
-            {info.loadAverage.map((v) => v.toFixed(2)).join(" ")}
-          </span>
+          LOAD <span className="text-fg-strong tabular-nums">{info.loadAverage.map(v => v.toFixed(2)).join(" ")}</span>
         </div>
       </div>
 
@@ -310,7 +301,7 @@ const MonochromeMonitor = () => {
           label="NETWORK"
           rows={[
             { label: "RX", value: formatSpeed(info.networkRxBytesPerSec) },
-            { label: "TX", value: formatSpeed(info.networkTxBytesPerSec) },
+            { label: "TX", value: formatSpeed(info.networkTxBytesPerSec) }
           ]}
         />
       </div>
@@ -334,7 +325,7 @@ const MonochromeMonitor = () => {
           label="DISK I/O"
           rows={[
             { label: "READ", value: formatSpeed(info.diskReadBytesPerSec) },
-            { label: "WRITE", value: formatSpeed(info.diskWriteBytesPerSec) },
+            { label: "WRITE", value: formatSpeed(info.diskWriteBytesPerSec) }
           ]}
         />
       </div>
@@ -343,11 +334,8 @@ const MonochromeMonitor = () => {
       {info.disks.length > 0 && (
         <div className="absolute left-8 right-8 bottom-[calc(18%+96px)] flex flex-col gap-1 text-[10px]">
           <div className="tracking-[0.25em] uppercase text-fg-strong">STORAGE</div>
-          <div
-            className="grid gap-x-6 gap-y-1"
-            style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}
-          >
-            {info.disks.map((disk) => (
+          <div className="grid gap-x-6 gap-y-1" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
+            {info.disks.map(disk => (
               <div key={disk.mountPoint} className="flex flex-col gap-0.5">
                 <div className="flex justify-between text-fg-muted">
                   <span className="truncate">{disk.mountPoint}</span>
@@ -356,10 +344,7 @@ const MonochromeMonitor = () => {
                   </span>
                 </div>
                 <div className="relative h-[2px] bg-track">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-fg-strong"
-                    style={{ width: `${disk.usage}%` }}
-                  />
+                  <div className="absolute inset-y-0 left-0 bg-fg-strong" style={{ width: `${disk.usage}%` }} />
                 </div>
               </div>
             ))}
@@ -386,5 +371,5 @@ const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
     <MonochromeMonitor />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

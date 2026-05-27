@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { KernelSize } from "postprocessing";
+
 import { Backdrop } from "./scenes/Backdrop";
 import { GodRays } from "./scenes/GodRays";
 import { Particles } from "./scenes/Particles";

@@ -1,5 +1,7 @@
-import { useAudio, useMediaMetadata, useProperties, useSystemMonitor } from "@fluxlay/react";
 import { useCallback, useMemo, useRef } from "react";
+
+import { useAudio, useMediaMetadata, useProperties, useSystemMonitor } from "@fluxlay/react";
+
 import { AlertOverlay } from "./components/AlertOverlay";
 import { BatterySegments } from "./components/BatterySegments";
 import { BpmDisplay } from "./components/BpmDisplay";
@@ -23,7 +25,7 @@ import {
   EMA_EPSILON_RATE,
   FOOTER_HEIGHT,
   HEADER_HEIGHT,
-  type PulseProperties,
+  type PulseProperties
 } from "./constants";
 import { useClock } from "./hooks/useClock";
 import { useEcgSynth } from "./hooks/useEcgSynth";
@@ -38,14 +40,12 @@ export function Wallpaper() {
     cpuIntervalMs: 200,
     memoryIntervalMs: 500,
     networkIntervalMs: 1000,
-    batteryIntervalMs: 10000,
+    batteryIntervalMs: 10000
   });
   const rawProps = useProperties<Partial<PulseProperties>>();
 
   const accent =
-    typeof rawProps.accentColor === "string" && rawProps.accentColor
-      ? rawProps.accentColor
-      : DEFAULT_ACCENT;
+    typeof rawProps.accentColor === "string" && rawProps.accentColor ? rawProps.accentColor : DEFAULT_ACCENT;
   const criticalThreshold =
     typeof rawProps.criticalThreshold === "number" && rawProps.criticalThreshold > 0
       ? rawProps.criticalThreshold
@@ -102,15 +102,12 @@ export function Wallpaper() {
 
   const rootStyle = useMemo<React.CSSProperties>(
     () => ({
-      ["--accent" as string]: accent,
+      ["--accent" as string]: accent
     }),
-    [accent],
+    [accent]
   );
 
-  const lanesAreaStyle = useMemo<React.CSSProperties>(
-    () => ({ top: HEADER_HEIGHT, bottom: FOOTER_HEIGHT }),
-    [],
-  );
+  const lanesAreaStyle = useMemo<React.CSSProperties>(() => ({ top: HEADER_HEIGHT, bottom: FOOTER_HEIGHT }), []);
 
   const laneHeight = showSecondaryVitals ? "20%" : "100%";
 

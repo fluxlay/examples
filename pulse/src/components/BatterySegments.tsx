@@ -1,4 +1,5 @@
 import { memo } from "react";
+
 import { BATTERY_LOW_THRESHOLD, BATTERY_SEGMENTS } from "../constants";
 
 interface BatterySegmentsProps {
@@ -11,10 +12,7 @@ function BatterySegmentsImpl({ level, charging }: BatterySegmentsProps) {
   if (level === null) {
     return (
       <div className="h-full flex items-center px-6">
-        <span
-          className="text-[14px] tracking-[0.4em] uppercase"
-          style={{ color: "var(--color-text-dim)" }}
-        >
+        <span className="text-[14px] tracking-[0.4em] uppercase" style={{ color: "var(--color-text-dim)" }}>
           DESKTOP · NO BATTERY
         </span>
       </div>
@@ -41,24 +39,18 @@ function BatterySegmentsImpl({ level, charging }: BatterySegmentsProps) {
                 height: 28,
                 background: on ? onColor : offColor,
                 boxShadow: on ? `0 0 10px ${onColor}` : "none",
-                transition: "background 0.4s ease, box-shadow 0.4s ease",
+                transition: "background 0.4s ease, box-shadow 0.4s ease"
               }}
             />
           );
         })}
       </div>
       {charging === true ? (
-        <span
-          className="text-[13px] tracking-[0.2em] uppercase shrink-0"
-          style={{ color: "var(--color-bat)" }}
-        >
+        <span className="text-[13px] tracking-[0.2em] uppercase shrink-0" style={{ color: "var(--color-bat)" }}>
           ⚡ CHARGING
         </span>
       ) : charging === false ? (
-        <span
-          className="text-[12px] tracking-[0.2em] uppercase shrink-0"
-          style={{ color: "var(--color-text-dim)" }}
-        >
+        <span className="text-[12px] tracking-[0.2em] uppercase shrink-0" style={{ color: "var(--color-text-dim)" }}>
           DISCHARGING
         </span>
       ) : null}

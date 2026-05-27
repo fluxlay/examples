@@ -30,10 +30,7 @@ export function App() {
   const events = useCalendarEvents(icsUrl, refreshMs);
 
   const now = useTickingNow();
-  const timeStr = useMemo(
-    () => now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-    [now]
-  );
+  const timeStr = useMemo(() => now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), [now]);
   const dateStr = useMemo(
     () =>
       now.toLocaleDateString([], {
