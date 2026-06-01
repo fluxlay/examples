@@ -4,18 +4,7 @@ slug: monochrome-time-art
 version: 0.1.0
 kind: web
 description: |
-  A bold, monochrome particle clock. The time is drawn as a cloud of dots, and every minute the particles scatter and re-assemble into the new time through a different motion — exploding, swirling, raining, converging — while the polarity flips between black-on-white and white-on-black for a brutalist edge.
-
-  Features:
-  - Particle Typography — the time is rendered as a living field of dots
-  - Per-Minute Motion — a new scatter/re-form animation each time the minute changes
-  - Brutalist Invert — negative/positive polarity flips every minute
-  - Rotating Typefaces — cycles through a curated set of expressive Google Fonts
-  - Theme Switch — dark or light base
-  - Optional Seconds — quiet, subdued seconds readout you can toggle on
-  - 12 / 24 Hour — pick your clock format
-
-  Built with React and Canvas 2D, fully within Fluxlay's production CSP.
+  白黒ミニマルなアート系タイポグラフィ時計の壁紙。スイス風の左寄せレイアウトで時刻を大胆に配置し、毎分ごとにアニメーションとフォントが自動で切り替わる、おしゃれで芸術的なデスクトップ壁紙です。同じ表情を二度と繰り返さず、白黒の余白美を楽しめます。
 
 permissions: []
 
@@ -24,6 +13,10 @@ network:
     reason: Load the rotating set of display typefaces (Google Fonts stylesheet).
   - origin: https://fonts.gstatic.com
     reason: Fetch the actual font files referenced by the Google Fonts stylesheet.
+  - origin: https://geocoding-api.open-meteo.com
+    reason: Resolve the configured city name into coordinates for the weather line.
+  - origin: https://api.open-meteo.com
+    reason: Fetch the current temperature and conditions for the optional weather line.
 
 properties:
   theme:
@@ -48,6 +41,15 @@ properties:
     type: boolean
     label: Show Seconds
     default: false
+  showWeather:
+    type: boolean
+    label: Show Weather
+    default: false
+  weatherLocation:
+    type: text
+    label: Weather Location
+    default: Tokyo
+    placeholder: City name (e.g. Tokyo, London)
   fontMode:
     type: select
     label: Typeface
@@ -55,20 +57,26 @@ properties:
     options:
       - value: shuffle
         label: Shuffle (new font each minute)
-      - value: playfair
-        label: Playfair Display
-      - value: bebas
-        label: Bebas Neue
       - value: archivo
         label: Archivo Black
-      - value: spacemono
-        label: Space Mono
-      - value: majormono
-        label: Major Mono Display
+      - value: anton
+        label: Anton
+      - value: bebas
+        label: Bebas Neue
       - value: oswald
         label: Oswald
-      - value: cormorant
-        label: Cormorant Garamond
+      - value: saira
+        label: Saira Condensed
+      - value: khand
+        label: Khand
+      - value: barlow
+        label: Barlow Condensed
+      - value: inter
+        label: Inter
+      - value: playfair
+        label: Playfair Display
+      - value: dmserif
+        label: DM Serif Display
       - value: abril
         label: Abril Fatface
   animationMode:
@@ -77,18 +85,18 @@ properties:
     default: shuffle
     options:
       - value: shuffle
-        label: Shuffle (new motion each minute)
-      - value: explode
-        label: Explode (burst from center)
-      - value: swirl
-        label: Swirl
-      - value: vortex
-        label: Vortex
-      - value: rain
-        label: Rain (fall from top)
-      - value: converge
-        label: Converge (in from edges)
-      - value: wave
-        label: Wave
-      - value: scatter
-        label: Scatter (random)
+        label: Shuffle (new animation each minute)
+      - value: flip
+        label: Flip
+      - value: slide
+        label: Slide
+      - value: dissolve
+        label: Dissolve
+      - value: blur
+        label: Blur
+      - value: glitch
+        label: Glitch
+      - value: fall
+        label: Fall
+      - value: scale
+        label: Scale
