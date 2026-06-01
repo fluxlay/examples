@@ -4,17 +4,18 @@ slug: monochrome-time-art
 version: 0.1.0
 kind: web
 description: |
-  A minimal, artful black-and-white clock. Every minute the time re-renders through a different animation — flip, slide, dissolve, blur, glitch, fall — and (optionally) a different typeface, so the wallpaper never repeats the same gesture twice.
+  A bold, monochrome particle clock. The time is drawn as a cloud of dots, and every minute the particles scatter and re-assemble into the new time through a different motion — exploding, swirling, raining, converging — while the polarity flips between black-on-white and white-on-black for a brutalist edge.
 
   Features:
-  - Pure Monochrome — strict black & white, generous negative space, typographic focus
-  - Per-Minute Motion — a new transition animation each time the minute changes
+  - Particle Typography — the time is rendered as a living field of dots
+  - Per-Minute Motion — a new scatter/re-form animation each time the minute changes
+  - Brutalist Invert — negative/positive polarity flips every minute
   - Rotating Typefaces — cycles through a curated set of expressive Google Fonts
-  - Theme Switch — dark (white on black) or light (black on white)
+  - Theme Switch — dark or light base
   - Optional Seconds — quiet, subdued seconds readout you can toggle on
   - 12 / 24 Hour — pick your clock format
 
-  Built with React and pure CSS keyframe animations, fully within Fluxlay's production CSP.
+  Built with React and Canvas 2D, fully within Fluxlay's production CSP.
 
 permissions: []
 
@@ -76,18 +77,18 @@ properties:
     default: shuffle
     options:
       - value: shuffle
-        label: Shuffle (new animation each minute)
-      - value: flip
-        label: Flip
-      - value: slide
-        label: Slide
-      - value: dissolve
-        label: Dissolve
-      - value: blur
-        label: Blur
-      - value: glitch
-        label: Glitch
-      - value: fall
-        label: Fall
-      - value: scale
-        label: Scale
+        label: Shuffle (new motion each minute)
+      - value: explode
+        label: Explode (burst from center)
+      - value: swirl
+        label: Swirl
+      - value: vortex
+        label: Vortex
+      - value: rain
+        label: Rain (fall from top)
+      - value: converge
+        label: Converge (in from edges)
+      - value: wave
+        label: Wave
+      - value: scatter
+        label: Scatter (random)
