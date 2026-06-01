@@ -1,0 +1,93 @@
+schemaVersion: 1
+name: Monochrome Time Art
+slug: monochrome-time-art
+version: 0.1.0
+kind: web
+description: |
+  A minimal, artful black-and-white clock. Every minute the time re-renders through a different animation — flip, slide, dissolve, blur, glitch, fall — and (optionally) a different typeface, so the wallpaper never repeats the same gesture twice.
+
+  Features:
+  - Pure Monochrome — strict black & white, generous negative space, typographic focus
+  - Per-Minute Motion — a new transition animation each time the minute changes
+  - Rotating Typefaces — cycles through a curated set of expressive Google Fonts
+  - Theme Switch — dark (white on black) or light (black on white)
+  - Optional Seconds — quiet, subdued seconds readout you can toggle on
+  - 12 / 24 Hour — pick your clock format
+
+  Built with React and pure CSS keyframe animations, fully within Fluxlay's production CSP.
+
+permissions: []
+
+network:
+  - origin: https://fonts.googleapis.com
+    reason: Load the rotating set of display typefaces (Google Fonts stylesheet).
+  - origin: https://fonts.gstatic.com
+    reason: Fetch the actual font files referenced by the Google Fonts stylesheet.
+
+properties:
+  theme:
+    type: select
+    label: Theme
+    default: dark
+    options:
+      - value: dark
+        label: Dark (white on black)
+      - value: light
+        label: Light (black on white)
+  hourFormat:
+    type: select
+    label: Hour Format
+    default: "24"
+    options:
+      - value: "24"
+        label: 24-hour
+      - value: "12"
+        label: 12-hour
+  showSeconds:
+    type: boolean
+    label: Show Seconds
+    default: false
+  fontMode:
+    type: select
+    label: Typeface
+    default: shuffle
+    options:
+      - value: shuffle
+        label: Shuffle (new font each minute)
+      - value: playfair
+        label: Playfair Display
+      - value: bebas
+        label: Bebas Neue
+      - value: archivo
+        label: Archivo Black
+      - value: spacemono
+        label: Space Mono
+      - value: majormono
+        label: Major Mono Display
+      - value: oswald
+        label: Oswald
+      - value: cormorant
+        label: Cormorant Garamond
+      - value: abril
+        label: Abril Fatface
+  animationMode:
+    type: select
+    label: Animation
+    default: shuffle
+    options:
+      - value: shuffle
+        label: Shuffle (new animation each minute)
+      - value: flip
+        label: Flip
+      - value: slide
+        label: Slide
+      - value: dissolve
+        label: Dissolve
+      - value: blur
+        label: Blur
+      - value: glitch
+        label: Glitch
+      - value: fall
+        label: Fall
+      - value: scale
+        label: Scale
