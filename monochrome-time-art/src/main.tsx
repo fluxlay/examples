@@ -74,88 +74,20 @@ function pickIndex(seed: number, len: number) {
 }
 
 // ── Weather (Open-Meteo, no API key, CORS-enabled → plain fetch works) ────────
-type WeatherKind = "sun" | "partly" | "cloud" | "fog" | "rain" | "snow" | "thunder";
-type Weather = { temp: number; kind: WeatherKind; place: string };
+type Weather = { temp: number; label: string; place: string };
 
-// WMO weather interpretation codes → icon kind.
-function weatherKind(code: number): WeatherKind {
-  if (code === 0) return "sun";
-  if (code <= 2) return "partly";
-  if (code === 3) return "cloud";
+// WMO weather interpretation codes → short text label (shown uppercased).
+function weatherLabel(code: number): string {
+  if (code === 0) return "clear";
+  if (code <= 2) return "partly cloudy";
+  if (code === 3) return "cloudy";
   if (code <= 48) return "fog";
+  if (code <= 57) return "drizzle";
   if (code <= 67) return "rain";
   if (code <= 77) return "snow";
-  if (code <= 82) return "rain";
+  if (code <= 82) return "showers";
   if (code <= 86) return "snow";
-  return "thunder";
-}
-
-// Minimal, geometric line icons drawn inline as SVG (CSP-safe, no external
-// assets). Single consistent stroke weight in `currentColor` for a clean,
-// strictly-monochrome Swiss look.
-function WeatherIcon({ kind }: { kind: WeatherKind }) {
-  const common = {
-    width: "1.55em",
-    height: "1.55em",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.6,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    style: { display: "block" }
-  };
-  const cloud = "M18 18.5H7.5A4 4 0 0 1 7 10.55 6 6 0 0 1 18.3 11 3.75 3.75 0 0 1 18 18.5Z";
-  switch (kind) {
-    case "sun":
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="12" r="4.2" />
-          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6" />
-        </svg>
-      );
-    case "partly":
-      return (
-        <svg {...common}>
-          <circle cx="8.5" cy="8" r="3" />
-          <path d="M8.5 2.6v1.4M3 8H1.6M13.4 8H12M4.4 4.4l1 1M12.6 4.4l-1 1" />
-          <path d="M18 19H9a3.5 3.5 0 0 1-.4-6.97A5 5 0 0 1 18.3 12 3.3 3.3 0 0 1 18 19Z" />
-        </svg>
-      );
-    case "cloud":
-      return (
-        <svg {...common}>
-          <path d={cloud} />
-        </svg>
-      );
-    case "fog":
-      return (
-        <svg {...common}>
-          <path d="M4 9h16M6 13h12M8 17h8" />
-        </svg>
-      );
-    case "rain":
-      return (
-        <svg {...common}>
-          <path d={cloud} />
-          <path d="M9 20.5l-1 2M13 20.5l-1 2M17 20.5l-1 2" />
-        </svg>
-      );
-    case "snow":
-      return (
-        <svg {...common}>
-          <path d={cloud} />
-          <path d="M9 21h.01M13 21.5h.01M17 21h.01" />
-        </svg>
-      );
-    case "thunder":
-      return (
-        <svg {...common}>
-          <path d={cloud} />
-          <path d="M13 19l-3 3.5h3l-2.5 3" />
-        </svg>
-      );
-  }
+  return "storm";
 }
 
 function useWeather(enabled: boolean, location: string): Weather | null {
@@ -178,7 +110,7 @@ function useWeather(enabled: boolean, location: string): Weather | null {
         ).then(r => r.json());
         const cur = fc?.current;
         if (cancelled || !cur) return;
-        setWeather({ temp: Math.round(cur.temperature_2m), kind: weatherKind(cur.weather_code), place: g.name });
+        setWeather({ temp: Math.round(cur.temperature_2m), label: weatherLabel(cur.weather_code), place: g.name });
       } catch {
         /* network/parse failure — leave the weather line hidden */
       }
@@ -352,9 +284,8 @@ function Wallpaper() {
             textTransform: "uppercase"
           }}
         >
-          <WeatherIcon kind={weather.kind} />
           <span>
-            {weather.place} {weather.temp}°
+            {weather.place} · {weather.temp}° · {weather.label}
           </span>
         </div>
       )}
