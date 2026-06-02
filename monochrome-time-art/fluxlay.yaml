@@ -1,7 +1,7 @@
 schemaVersion: 1
 name: Monochrome Time Art
 slug: monochrome-time-art
-version: 0.1.0
+version: 0.2.0
 kind: web
 description: |
   白黒ミニマルなアート系タイポグラフィ時計の壁紙。スイス風の左寄せレイアウトで時刻を大胆に配置し、毎分ごとにアニメーションとフォントが自動で切り替わる、おしゃれで芸術的なデスクトップ壁紙です。同じ表情を二度と繰り返さず、白黒の余白美を楽しめます。
