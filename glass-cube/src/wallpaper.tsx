@@ -89,7 +89,9 @@ function App() {
 
         <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={35} />
 
-        <Environment preset="studio" />
+        {/* Bundle the HDRI locally instead of fetching the drei preset from a CDN,
+            so the wallpaper needs no network access and isn't blocked by the CSP. */}
+        <Environment files="/studio_small_03_1k.hdr" />
 
         <Suspense fallback={null}>
           <group position={[0, 0, 0]}>

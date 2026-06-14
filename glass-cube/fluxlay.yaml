@@ -12,7 +12,3 @@ description: |
   - Minimal Aesthetic — Clean black background with subtle horizontal lines, studio-lit environment
 
   Built with React Three Fiber, Drei, and a custom GLB model for high-quality 3D visuals directly on your desktop.
-
-network:
-  - origin: https://raw.githack.com
-    reason: Load the studio HDRI environment map (drei <Environment preset>) for the glass material.
