@@ -20,7 +20,7 @@
     "three": "^0.184.0"
   },
   "devDependencies": {
-    "@fluxlay/cli": "2.1.0",
+    "@fluxlay/cli": "2.2.0",
     "@fluxlay/react": "latest",
     "@fluxlay/vite": "^1.0.5",
     "@tailwindcss/vite": "^4.3.1",

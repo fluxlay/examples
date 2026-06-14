@@ -16,7 +16,7 @@
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
-    "@fluxlay/cli": "^2.1.0",
+    "@fluxlay/cli": "^2.2.0",
     "@fluxlay/vite": "^1.0.5",
     "@tailwindcss/vite": "^4.3.1",
     "@types/react": "^19.2.17",
