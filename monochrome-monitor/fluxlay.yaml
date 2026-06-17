@@ -17,7 +17,7 @@ description: |
 
 properties:
   themeMode:
-    type: string
+    type: select
     label: Theme
     default: auto
     options:
