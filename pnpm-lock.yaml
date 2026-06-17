@@ -21,8 +21,8 @@ importers:
   audio-visualizer:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -31,11 +31,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -83,14 +83,14 @@ importers:
         version: 0.184.0
     devDependencies:
       '@fluxlay/cli':
-        specifier: 2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/react':
-        specifier: latest
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -119,8 +119,8 @@ importers:
   dev-dashboard:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       ical.js:
         specifier: ^2.2.1
         version: 2.2.1
@@ -132,11 +132,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -162,8 +162,8 @@ importers:
   foggy-window:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       '@react-three/drei':
         specifier: ^10.7.7
         version: 10.7.7(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.184.0))(@types/react@19.2.17)(@types/three@0.184.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.184.0)
@@ -181,11 +181,11 @@ importers:
         version: 0.184.0
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -214,8 +214,8 @@ importers:
   glass-cube:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       '@react-spring/web':
         specifier: ^10.1.1
         version: 10.1.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -245,11 +245,11 @@ importers:
         version: 2.36.1(three@0.184.0)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -278,8 +278,8 @@ importers:
   gradient-waves:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -288,11 +288,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.17
@@ -319,11 +319,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -346,8 +346,8 @@ importers:
   matrix-rain:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -356,11 +356,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.17
@@ -380,8 +380,8 @@ importers:
   monochrome-monitor:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -390,11 +390,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -420,8 +420,8 @@ importers:
   monochrome-time-art:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -430,11 +430,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.17
@@ -454,8 +454,8 @@ importers:
   mouse-follower:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       '@react-spring/web':
         specifier: ^10.1.1
         version: 10.1.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -467,11 +467,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -497,8 +497,8 @@ importers:
   particle-flow-field:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -507,11 +507,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.17
@@ -538,14 +538,14 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -571,8 +571,8 @@ importers:
   run-command:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -581,11 +581,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -611,8 +611,8 @@ importers:
   shader-basic:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -621,11 +621,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.17
@@ -642,8 +642,8 @@ importers:
   system-monitor:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -652,11 +652,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -682,8 +682,8 @@ importers:
   task-list:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -692,11 +692,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
@@ -722,8 +722,8 @@ importers:
   type-pulse:
     dependencies:
       '@fluxlay/react':
-        specifier: ^1.3.4
-        version: 1.3.4(react@19.2.7)
+        specifier: ^1.3.5
+        version: 1.3.5(react@19.2.7)
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -732,11 +732,11 @@ importers:
         version: 19.2.7(react@19.2.7)
     devDependencies:
       '@fluxlay/cli':
-        specifier: ^2.2.0
-        version: 2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
+        specifier: ^2.3.1
+        version: 2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
       '@fluxlay/vite':
-        specifier: ^1.0.5
-        version: 1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
+        specifier: ^1.0.6
+        version: 1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.17
@@ -950,21 +950,21 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fluxlay/cli@2.2.0':
-    resolution: {integrity: sha512-qMj1TBlL0lP0Xv9hng4LHOSZMcmw2vdjjo4OMqK/gYN3cwJnzCUTu+5EaUgxnP7quQ4TffdQ61+28TCyFq0tUg==}
+  '@fluxlay/cli@2.3.1':
+    resolution: {integrity: sha512-xKN1d0OSkfRN9Vb0swnCPpFNwzMuJ5WWiKLxfdy11iWmqrj1/Zl02Aw4l391zBhckZwFSQR8gujrjmDH0ZdOFw==}
     cpu: [x64, arm64]
     os: [darwin, win32]
     hasBin: true
 
-  '@fluxlay/react@1.3.4':
-    resolution: {integrity: sha512-FD/Ws7BK/pme5JVK8txelJu526D+4G43K2w0Eyb34TS+EthBJF2PSToAhwvl6MsJMSilzV+94j7YY8jgEFkuAw==}
+  '@fluxlay/react@1.3.5':
+    resolution: {integrity: sha512-Bd5iKzg3AZ5vn6NurtKLWfXR+Ow6uTSyuGTkFB4lGEQQav7aBuLahMcB5oxpfUZ2nPY+mnbP53uhXC8vTH4M0g==}
     peerDependencies:
       react: ^19.0.0
 
-  '@fluxlay/vite@1.0.5':
-    resolution: {integrity: sha512-yCVxwN/WpeaCq0REVb4MHwuUqg9SgMA9IuyhGz/uUepy7idSKoKdNnFUfX4O0A7UreY7A3X/ESYWgJ2h+hS1dQ==}
+  '@fluxlay/vite@1.0.6':
+    resolution: {integrity: sha512-0ffqYCvOrWUf3EC+OLqcizXRAvu21CYeG3ECVFEH8OMZS1T7piP9hpBcgFAODFIRFHA+1tHR76FgYMWK/mv+YQ==}
     peerDependencies:
-      vite: '>=7'
+      vite: ^8.0.14
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -2458,7 +2458,7 @@ snapshots:
   '@esbuild/win32-x64@0.27.7':
     optional: true
 
-  '@fluxlay/cli@2.2.0(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)':
+  '@fluxlay/cli@2.3.1(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)':
     dependencies:
       '@bufbuild/protobuf': 2.12.0
       '@clack/prompts': 1.5.1
@@ -2490,13 +2490,13 @@ snapshots:
       - tsx
       - yaml
 
-  '@fluxlay/react@1.3.4(react@19.2.7)':
+  '@fluxlay/react@1.3.5(react@19.2.7)':
     dependencies:
       '@xterm/addon-fit': 0.11.0
       '@xterm/xterm': 6.0.0
       react: 19.2.7
 
-  '@fluxlay/vite@1.0.5(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))':
+  '@fluxlay/vite@1.0.6(vite@8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0))':
     dependencies:
       terser: 5.48.0
       vite: 8.0.16(esbuild@0.27.7)(jiti@2.7.0)(terser@5.48.0)
